@@ -43,21 +43,25 @@ public class FactoryUtils {
 					
 					do {
 						Patient patient = new Patient();
+						
 						//handle patient identifiers
 						Set<PatientIdentifier> patientIdentifiers = new HashSet<PatientIdentifier>();
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
-						patientIdentifier.getLocation().setLocationId(dbLocation.getId());
+						patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
+						patientIdentifier.setLocation(dbLocation);//   .setLocationId(dbLocation.getId());
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(4));
+						patientIdentifier.setPreferred(true);
 						patientIdentifiers.add(patientIdentifier);
 						
 						//handle patient
+						//patient.setIdentifiers(patientIdentifiers);
 						patient.setIdentifiers(patientIdentifiers);
 						patient.addName(new PersonName(result.getString(result.findColumn("surname")), result
 						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
 						patient.setBirthdate(result.getDate(result.findColumn("DOB")));
 						patient.setGender(result.getString(result.findColumn("sex")));
 						
-						patients.add(patient);
+						//patients.add(patient);
 						
 						//handle patient save to openmrs
 						Patient dbPatient = Context.getPatientService().savePatient(patient);
