@@ -1,0 +1,2 @@
+org\openmrs\module\datamigration\api\dao\DataMigrationDaoTest.class
+org\openmrs\module\datamigration\api\DataMigrationServiceTest.class

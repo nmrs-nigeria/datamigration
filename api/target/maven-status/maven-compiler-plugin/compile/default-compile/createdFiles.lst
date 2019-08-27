@@ -1,0 +1,6 @@
+org\openmrs\module\datamigration\DataMigrationConfig.class
+org\openmrs\module\datamigration\api\impl\DataMigrationServiceImpl.class
+org\openmrs\module\datamigration\DataMigrationActivator.class
+org\openmrs\module\datamigration\Item.class
+org\openmrs\module\datamigration\api\DataMigrationService.class
+org\openmrs\module\datamigration\api\dao\DataMigrationDao.class
