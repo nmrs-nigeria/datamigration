@@ -28,8 +28,8 @@ public class FactoryUtils {
 			Location dbLocation = null;
 			if (result.next()) {
 				location = new Location();
-				location.setAddress1(result.getString(result.findColumn("address1")));
-				location.setName(result.getString(result.findColumn("name")));
+				location.setAddress1(result.getString(result.findColumn("lga")));
+				location.setName(result.getString(result.findColumn("facilityname")));
 				
 				dbLocation = Context.getLocationService().saveLocation(location);
 			}
@@ -47,6 +47,7 @@ public class FactoryUtils {
 						Set<PatientIdentifier> patientIdentifiers = new HashSet<PatientIdentifier>();
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
 						patientIdentifier.getLocation().setLocationId(dbLocation.getId());
+						patientIdentifier.setIdentifierType(new PatientIdentifierType(4));
 						patientIdentifiers.add(patientIdentifier);
 						
 						//handle patient

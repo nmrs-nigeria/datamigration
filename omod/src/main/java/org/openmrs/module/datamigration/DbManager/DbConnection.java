@@ -1,6 +1,8 @@
 package org.openmrs.module.datamigration.DbManager;
 
 import com.mysql.jdbc.Connection;
+import org.openmrs.module.datamigration.Model.NmrsConnection;
+import org.openmrs.module.datamigration.Utility.OptionsUtils;
 
 import java.sql.DriverManager;
 
@@ -10,10 +12,9 @@ public class DbConnection {
 		Connection connection;
 		
 		try {
-			connection = (Connection) DriverManager
-			        .getConnection(
-			            "jdbc\\:mysql\\://localhost\\:3306/apindb?autoReconnect\\=true&sessionVariables\\=default_storage_engine%3DInnoDB&useUnicode\\=true&characterEncoding\\=UTF-8",
-			            "root", "P@ssw0rd");
+			NmrsConnection nmrsConnection = OptionsUtils.getNmrsConnectionDetails();
+			connection = (Connection) DriverManager.getConnection(nmrsConnection.getUrl().replace("twopointtow", "apindb"),
+			    "root", "P@ssw0rd");
 			return connection;
 		}
 		catch (Exception e) {

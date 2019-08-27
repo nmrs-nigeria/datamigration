@@ -2,4 +2,6 @@ org\openmrs\module\datamigration\fragment\controller\UsersFragmentController.cla
 org\openmrs\module\datamigration\web\controller\DataMigrationController.class
 org\openmrs\module\datamigration\Utility\FactoryUtils.class
 org\openmrs\module\datamigration\DbManager\DbConnection.class
+org\openmrs\module\datamigration\Model\NmrsConnection.class
 org\openmrs\module\datamigration\extension\html\AdminList.class
+org\openmrs\module\datamigration\Utility\OptionsUtils.class
