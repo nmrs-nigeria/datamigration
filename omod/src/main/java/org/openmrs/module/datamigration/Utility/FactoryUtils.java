@@ -49,7 +49,7 @@ public class FactoryUtils {
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
 						patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
 						patientIdentifier.setLocation(dbLocation);//   .setLocationId(dbLocation.getId());
-						patientIdentifier.setIdentifierType(new PatientIdentifierType(4));
+						patientIdentifier.setIdentifierType(new PatientIdentifierType(3));
 						patientIdentifier.setPreferred(true);
 						patientIdentifiers.add(patientIdentifier);
 						
