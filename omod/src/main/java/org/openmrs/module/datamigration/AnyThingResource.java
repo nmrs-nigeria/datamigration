@@ -8,14 +8,7 @@
  */
 package org.openmrs.module.datamigration;
 
-import java.util.Date;
-import java.util.List;
-
-import org.openmrs.User;
-import org.openmrs.api.UserService;
-import org.openmrs.api.context.Context;
 import org.openmrs.module.webservices.rest.SimpleObject;
-import org.openmrs.module.webservices.rest.web.ConversionUtil;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
 import org.openmrs.module.webservices.rest.web.annotation.PropertyGetter;
@@ -26,7 +19,6 @@ import org.openmrs.module.webservices.rest.web.representation.RefRepresentation;
 import org.openmrs.module.webservices.rest.web.representation.Representation;
 import org.openmrs.module.webservices.rest.web.resource.api.PageableResult;
 import org.openmrs.module.webservices.rest.web.resource.impl.DelegatingResourceDescription;
-import org.openmrs.module.webservices.rest.web.resource.impl.EmptySearchResult;
 import org.openmrs.module.webservices.rest.web.resource.impl.MetadataDelegatingCrudResource;
 import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
@@ -48,7 +40,22 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 	
 	@Override
 	public DelegatingResourceDescription getRepresentationDescription(Representation rep) {
-		return null;
+		DelegatingResourceDescription description = null;
+		if (rep instanceof RefRepresentation) {
+			description = new DelegatingResourceDescription();
+			description.addProperty("uuid");
+			description.addProperty("json");
+			description.addSelfLink();
+		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
+			description = new DelegatingResourceDescription();
+			description.addProperty("uuid");
+			description.addProperty("json");
+			description.addSelfLink();
+			if (rep instanceof DefaultRepresentation) {
+				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
+			}
+		}
+		return description;
 	}
 	
 	@PropertyGetter("display")
@@ -58,13 +65,20 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 	
 	@Override
 	public AnyThing newDelegate() throws ResourceDoesNotSupportOperationException {
-		return null;
+		return new AnyThing();
 	}
 	
 	@Override
 	public AnyThing save(AnyThing delegate) throws ResourceDoesNotSupportOperationException {
-		System.out.println(delegate.getJsonm());
+		System.out.println(delegate.getJson());
 		return null;
+	}
+	
+	@Override
+	public DelegatingResourceDescription getCreatableProperties() {
+		DelegatingResourceDescription description = new DelegatingResourceDescription();
+		description.addRequiredProperty("json");
+		return description;
 	}
 	
 	@Override

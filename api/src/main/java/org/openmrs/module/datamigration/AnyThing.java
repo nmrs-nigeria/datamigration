@@ -2,15 +2,27 @@ package org.openmrs.module.datamigration;
 
 import org.openmrs.BaseOpenmrsMetadata;
 
-public abstract class AnyThing extends BaseOpenmrsMetadata {
+public class AnyThing extends BaseOpenmrsMetadata {
 	
-	private String jsonm;
+	private String json;
 	
-	public String getJsonm() {
-		return jsonm;
+	public String getJson() {
+		return json;
 	}
 	
-	public void setJsonm(String jsonm) {
-		this.jsonm = jsonm;
+	public void setJson(String json) {
+		this.json = json;
+	}
+	
+	@Override
+	public Integer getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public void setId(Integer id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
