@@ -49,7 +49,7 @@ public class FactoryUtils {
 						
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
 						//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
-						patientIdentifier.setIdentifier("GVUMLE");
+						patientIdentifier.setIdentifier("1002C4");
 						patientIdentifier.setLocation(dbLocation);
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(3));
 						patientIdentifier.setPreferred(true);
@@ -60,7 +60,7 @@ public class FactoryUtils {
 						patientIdentifier.setIdentifier("GVUMLE");
 						patientIdentifier.setLocation(dbLocation);
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(2));
-
+						
 						patientIdentifiers.add(patientIdentifier);
 						
 						patientIdentifier = new PatientIdentifier();
