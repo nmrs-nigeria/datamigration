@@ -9,11 +9,14 @@
  */
 package org.openmrs.module.datamigration.fragment.controller;
 
+import java.util.Properties;
+
 import org.openmrs.api.UserService;
-import org.openmrs.module.datamigration.DbManager.DbConnection;
-import org.openmrs.module.datamigration.Utility.FactoryUtils;
+import org.openmrs.module.datamigration.api.dao.DbConnection;
+import org.openmrs.module.datamigration.util.FactoryUtils;
 import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.fragment.FragmentModel;
+import org.openmrs.util.OpenmrsUtil;
 
 /**
  *  * Controller for a fragment that shows all users  
@@ -25,7 +28,15 @@ public class UsersFragmentController {
 		DbConnection connection = new DbConnection();
 		
 		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection());
+		
+		Properties props = new Properties();
+		props = OpenmrsUtil.getRuntimeProperties("openmrs");
+		if (props == null) {
+			props = OpenmrsUtil.getRuntimeProperties("openmrs-standalone");
+			
+		}
+		
+		factoryUtils.PatientUtils(connection.Connection(props));
 		
 		model.addAttribute("users", service.getAllUsers());
 	}
