@@ -60,7 +60,7 @@ public class FactoryUtils {
 						patientIdentifier.setIdentifier("GVUMLE");
 						patientIdentifier.setLocation(dbLocation);
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(2));
-						patientIdentifier.setPreferred(true);
+
 						patientIdentifiers.add(patientIdentifier);
 						
 						patientIdentifier = new PatientIdentifier();
@@ -68,7 +68,7 @@ public class FactoryUtils {
 						patientIdentifier.setIdentifier("GVUMLE");
 						patientIdentifier.setLocation(dbLocation);
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(1));
-						patientIdentifier.setPreferred(true);
+						
 						patientIdentifiers.add(patientIdentifier);
 						
 						//handle patient
