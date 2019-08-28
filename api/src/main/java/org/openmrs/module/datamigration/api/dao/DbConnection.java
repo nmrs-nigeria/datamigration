@@ -14,8 +14,8 @@ public class DbConnection {
 		
 		try {
 			NmrsConnection nmrsConnection = OptionsUtils.getNmrsConnectionDetails(props);
-			connection = (Connection) DriverManager.getConnection(nmrsConnection.getUrl().replace("twopointtow", "apindb"),
-			    "root", "P@ssw0rd");
+			connection = DriverManager.getConnection(nmrsConnection.getUrl(), nmrsConnection.getUsername(),
+			    nmrsConnection.getPassword());
 			return connection;
 		}
 		catch (Exception e) {

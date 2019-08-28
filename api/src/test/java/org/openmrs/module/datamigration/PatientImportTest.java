@@ -12,9 +12,12 @@ package org.openmrs.module.datamigration;
 import java.util.Properties;
 
 import org.junit.Test;
+import org.openmrs.PatientIdentifierType;
 import org.openmrs.module.datamigration.api.dao.DbConnection;
 import org.openmrs.module.datamigration.util.FactoryUtils;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
+
+import javax.naming.Context;
 
 public class PatientImportTest extends BaseModuleContextSensitiveTest {
 	
@@ -22,12 +25,12 @@ public class PatientImportTest extends BaseModuleContextSensitiveTest {
 	public void shouldImportPatients() {
 		
 		Properties runtimeProperties = new Properties();
-		runtimeProperties.setProperty("connection.username", "sa");
-		runtimeProperties.setProperty("connection.password", "");
-		runtimeProperties.setProperty("connection.url", "");
+		runtimeProperties.setProperty("connection.username", "root");
+		runtimeProperties.setProperty("connection.password", "P@ssw0rd");
+		runtimeProperties.setProperty("connection.url",
+		    "jdbc:mysql://127.0.0.1:3306/apindb?zeroDateTimeBehavior=convertToNull");
 		
 		DbConnection connection = new DbConnection();
-		
 		FactoryUtils factoryUtils = new FactoryUtils();
 		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
 	}
