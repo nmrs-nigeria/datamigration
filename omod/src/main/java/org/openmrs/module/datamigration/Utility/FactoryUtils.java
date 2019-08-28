@@ -46,15 +46,32 @@ public class FactoryUtils {
 						
 						//handle patient identifiers
 						Set<PatientIdentifier> patientIdentifiers = new HashSet<PatientIdentifier>();
+						
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
-						patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
-						patientIdentifier.setLocation(dbLocation);//   .setLocationId(dbLocation.getId());
+						//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
+						patientIdentifier.setIdentifier("GVUMLE");
+						patientIdentifier.setLocation(dbLocation);
 						patientIdentifier.setIdentifierType(new PatientIdentifierType(3));
 						patientIdentifier.setPreferred(true);
 						patientIdentifiers.add(patientIdentifier);
 						
+						patientIdentifier = new PatientIdentifier();
+						//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
+						patientIdentifier.setIdentifier("GVUMLE");
+						patientIdentifier.setLocation(dbLocation);
+						patientIdentifier.setIdentifierType(new PatientIdentifierType(2));
+						patientIdentifier.setPreferred(true);
+						patientIdentifiers.add(patientIdentifier);
+						
+						patientIdentifier = new PatientIdentifier();
+						//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
+						patientIdentifier.setIdentifier("GVUMLE");
+						patientIdentifier.setLocation(dbLocation);
+						patientIdentifier.setIdentifierType(new PatientIdentifierType(1));
+						patientIdentifier.setPreferred(true);
+						patientIdentifiers.add(patientIdentifier);
+						
 						//handle patient
-						//patient.setIdentifiers(patientIdentifiers);
 						patient.setIdentifiers(patientIdentifiers);
 						patient.addName(new PersonName(result.getString(result.findColumn("surname")), result
 						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
