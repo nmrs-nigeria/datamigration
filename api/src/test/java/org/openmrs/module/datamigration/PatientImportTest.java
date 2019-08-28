@@ -9,6 +9,8 @@
  */
 package org.openmrs.module.datamigration;
 
+import java.util.Properties;
+
 import org.junit.Test;
 import org.openmrs.module.datamigration.api.dao.DbConnection;
 import org.openmrs.module.datamigration.util.FactoryUtils;
@@ -19,9 +21,14 @@ public class PatientImportTest extends BaseModuleContextSensitiveTest {
 	@Test
 	public void shouldImportPatients() {
 		
+		Properties runtimeProperties = new Properties();
+		runtimeProperties.setProperty("connection.username", "sa");
+		runtimeProperties.setProperty("connection.password", "");
+		runtimeProperties.setProperty("connection.url", "");
+		
 		DbConnection connection = new DbConnection();
 		
 		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(getRuntimeProperties()));
+		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
 	}
 }
