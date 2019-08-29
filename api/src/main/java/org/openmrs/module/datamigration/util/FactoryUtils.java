@@ -23,10 +23,10 @@ public class FactoryUtils {
 	public void PatientUtils(Connection connection) {
 		/*Dummy for Identifier type in Memory database*/
 		
-		PatientIdentifierType type = new PatientIdentifierType(3);
-		type.setName("OpenMRS ID");
+		//PatientIdentifierType type = new PatientIdentifierType(3);
+		//type.setName("OpenMRS ID");
 		//type.setRequired(true);
-		Context.getPatientService().savePatientIdentifierType(type);
+		//Context.getPatientService().savePatientIdentifierType(type);
 		
 		try {
 			Statement statement = connection.createStatement();
@@ -47,37 +47,20 @@ public class FactoryUtils {
 				if (result.next()) {
 					
 					do {
-						/*Person person = new Person();
-						person.addName(new PersonName(result.getString(result.findColumn("surname")), result
-						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
-						person.getPersonName().setPreferred(true);
-						person.setGender("M");
-						person.setBirthdate(new Date());
-						person.setDead(false);
-						//person.setPersonVoided(false);
-						
-						Context.getPersonService().savePerson(person);*/
-						
 						Patient patient = new Patient();
-						
 						//handle patient identifiers
 						Set<PatientIdentifier> patientIdentifiers = new HashSet<PatientIdentifier>();
 						
 						PatientIdentifier patientIdentifier = new PatientIdentifier();
-						//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepid")));
-						patientIdentifier.setIdentifier("1002C4");
+						patientIdentifier.setIdentifier("1002RT");
 						patientIdentifier.setLocation(location);
-						//patientIdentifier.setIdentifierType(new PatientIdentifierType(3));
-						patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(3));
+						patientIdentifier.setIdentifierType(Context.getPatientService().getAllPatientIdentifierTypes().get(0));
 						patientIdentifier.setPreferred(true);
-						patientIdentifiers.add(patientIdentifier);
-						
 						patientIdentifiers.add(patientIdentifier);
 						
 						//handle patient
 						patient.setIdentifiers(patientIdentifiers);
 
-						//patient.setPersonId(person.getId());
 						patient.addName(new PersonName(result.getString(result.findColumn("surname")), result
 						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
 						patient.setBirthdate(new Date());
