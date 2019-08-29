@@ -47,16 +47,16 @@ public class FactoryUtils {
 				if (result.next()) {
 					
 					do {
-						Person person = new Person();
+						/*Person person = new Person();
 						person.addName(new PersonName(result.getString(result.findColumn("surname")), result
 						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
 						person.getPersonName().setPreferred(true);
 						person.setGender("M");
 						person.setBirthdate(new Date());
 						person.setDead(false);
-						person.setPersonVoided(false);
+						//person.setPersonVoided(false);
 						
-						Context.getPersonService().savePerson(person);
+						Context.getPersonService().savePerson(person);*/
 						
 						Patient patient = new Patient();
 						
@@ -76,7 +76,8 @@ public class FactoryUtils {
 						
 						//handle patient
 						patient.setIdentifiers(patientIdentifiers);
-						patient.setPersonId(person.getId());
+
+						//patient.setPersonId(person.getId());
 						patient.addName(new PersonName(result.getString(result.findColumn("surname")), result
 						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
 						patient.setBirthdate(new Date());
