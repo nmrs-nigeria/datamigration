@@ -21,53 +21,19 @@ public class FactoryUtils {
 	
 	/*This method does the utility connection for the patient*/
 	public void PatientUtils(Connection connection) {
-		/*Dummy for Identifier type in Memory database*/
-		
-		//PatientIdentifierType type = new PatientIdentifierType(3);
-		//type.setName("OpenMRS ID");
-		//type.setRequired(true);
-		//Context.getPatientService().savePatientIdentifierType(type);
 		
 		try {
-			Statement statement = connection.createStatement();
-			ResultSet result = statement.executeQuery(FACILITY_SELECT_QUERY);
-			Location location = null;
-			if (result.next()) {
-				location = new Location();
-				location.setAddress1(result.getString(result.findColumn("lga")));
-				location.setName(result.getString(result.findColumn("facilityname")));
-				
-				Context.getLocationService().saveLocation(location);
-			}
+			Location location = LocationUtil.InsertLocation(connection, FACILITY_SELECT_QUERY);
 			if (location != null) {
-				statement = connection.createStatement();
-				result = statement.executeQuery(PATIENT_QUERY);
+				Statement statement = connection.createStatement();
+				ResultSet result = statement.executeQuery(PATIENT_QUERY);
 				ArrayList<Patient> patients = new ArrayList<Patient>();
 				
 				if (result.next()) {
 					
 					do {
-						Patient patient = new Patient();
-						//handle patient identifiers
-						Set<PatientIdentifier> patientIdentifiers = new HashSet<PatientIdentifier>();
-						
-						PatientIdentifier patientIdentifier = new PatientIdentifier();
-						patientIdentifier.setIdentifier("1002RT");
-						patientIdentifier.setLocation(location);
-						patientIdentifier.setIdentifierType(Context.getPatientService().getAllPatientIdentifierTypes().get(0));
-						patientIdentifier.setPreferred(true);
-						patientIdentifiers.add(patientIdentifier);
-						
 						//handle patient
-						patient.setIdentifiers(patientIdentifiers);
-
-						patient.addName(new PersonName(result.getString(result.findColumn("surname")), result
-						        .getString(result.findColumn("othernames")), result.getString(result.findColumn("surname"))));
-						patient.setBirthdate(new Date());
-						patient.setGender("M");
-						
-						//handle patient save to openmrs
-						Context.getPatientService().savePatient(patient);
+						Patient patient = PatientUtil.InsertPatient(connection, result, location);
 						
 						//handle encounters and obs
 						

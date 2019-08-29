@@ -8,6 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.api.dao.DbConnection;
+import org.openmrs.module.datamigration.util.FactoryUtils;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -23,6 +25,8 @@ import org.openmrs.module.webservices.rest.web.resource.impl.MetadataDelegatingC
 import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
+
+import java.util.Properties;
 
 @Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/anything", supportedClass = AnyThing.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
@@ -70,7 +74,17 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 	
 	@Override
 	public AnyThing save(AnyThing delegate) throws ResourceDoesNotSupportOperationException {
+		Properties runtimeProperties = new Properties();
+		runtimeProperties.setProperty("connection.username", "root");
+		runtimeProperties.setProperty("connection.password", "P@ssw0rd");
+		runtimeProperties.setProperty("connection.url",
+		    "jdbc:mysql://127.0.0.1:3306/apindb?zeroDateTimeBehavior=convertToNull");
+		
+		DbConnection connection = new DbConnection();
+		FactoryUtils factoryUtils = new FactoryUtils();
+		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
 		System.out.println(delegate.getJson());
+		
 		return null;
 	}
 	
