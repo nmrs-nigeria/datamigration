@@ -83,7 +83,7 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 		DbConnection connection = new DbConnection();
 		FactoryUtils factoryUtils = new FactoryUtils();
 		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
-		System.out.println(delegate.getJson());
+		//System.out.println(delegate.getJson());
 		
 		return null;
 	}

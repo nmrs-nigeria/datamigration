@@ -23,8 +23,7 @@ public abstract class PatientUtil {
 			Set<PatientIdentifier> patientIdentifiers = new TreeSet<PatientIdentifier>();
 			
 			PatientIdentifier patientIdentifier = new PatientIdentifier();
-			//patientIdentifier.setIdentifier(result.getString(result.findColumn("pepId")));
-			patientIdentifier.setIdentifier("1002RT");
+			patientIdentifier.setIdentifier(result.getString(result.findColumn("pepId")));
 			patientIdentifier.setLocation(location);
 			patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(4));
 			patientIdentifier.setPreferred(true);
