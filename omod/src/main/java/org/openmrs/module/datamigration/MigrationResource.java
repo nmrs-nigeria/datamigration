@@ -8,8 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
-import org.openmrs.module.datamigration.api.dao.DbConnection;
 import org.openmrs.module.datamigration.util.FactoryUtils;
+import org.openmrs.module.datamigration.util.Model.Migration;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -52,7 +52,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 			description.addProperty("givenName");
 			description.addProperty("middleName");
 			description.addProperty("familyName");
-			description.addProperty("family_name2");/*
+			description.addProperty("family_name2");
+			description.addProperty("facility", Representation.REF);
+			/*
 			                                        description.addProperty("creator");
 			                                        description.addProperty("date_created");
 			                                        description.addProperty("phone");
@@ -88,12 +90,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	@Override
 	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
 		
-		DbConnection connection = new DbConnection();
-		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(delegate);
 		try {
-			/*ObjectMapper mapper = new ObjectMapper();
-			Example lib = mapper.readValue(delegate.getJson(), Example.class);*/
+			FactoryUtils factoryUtils = new FactoryUtils();
+			factoryUtils.PatientUtils(delegate);
 		}
 		catch (Exception ex) {
 			
@@ -112,7 +111,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		description.addProperty("givenName");
 		description.addProperty("middleName");
 		description.addProperty("familyName");
-		description.addProperty("family_name2");/*
+		description.addProperty("family_name2");
+		description.addProperty("facility");
+		/*
 		                                        description.addProperty("creator");
 		                                        description.addProperty("date_created");
 		                                        description.addProperty("phone");
@@ -139,4 +140,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		throw new ResourceDoesNotSupportOperationException();
 	}
 	
+	/*@Override
+	public Model getCREATEModel(Representation rep){
+		return new ModelImpl()
+				.property("facility", new RefProperty("#/definition/FacilityCreate"));
+	}*/
 }

@@ -1,6 +1,7 @@
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\NigeriaEmrRestController.java
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\AnyThingResource.java
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\fragment\controller\UsersFragmentController.java
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\MigrationResource.java
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\web\controller\DataMigrationController.java
-C:\Users\JOHNBOSCO\IdeaProjects\datamigration\omod\src\main\java\org\openmrs\module\datamigration\extension\html\AdminList.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/extension/html/AdminList.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/FacilityResource.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/NigeriaEmrRestController.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/web/controller/DataMigrationController.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/AnyThingResource.java
+/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.java

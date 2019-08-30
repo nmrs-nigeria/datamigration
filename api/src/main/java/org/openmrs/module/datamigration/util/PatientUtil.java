@@ -5,13 +5,9 @@ import org.openmrs.Patient;
 import org.openmrs.PatientIdentifier;
 import org.openmrs.PersonName;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.datamigration.Migration;
+import org.openmrs.module.datamigration.util.Model.Migration;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 

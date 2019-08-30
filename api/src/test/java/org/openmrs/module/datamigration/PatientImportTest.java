@@ -32,6 +32,6 @@ public class PatientImportTest extends BaseModuleContextSensitiveTest {
 		
 		DbConnection connection = new DbConnection();
 		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
+		//factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
 	}
 }
