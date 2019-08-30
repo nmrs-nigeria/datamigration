@@ -1,4 +1,4 @@
-package org.openmrs.module.datamigration;
+package org.openmrs.module.datamigration.util.Model;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.openmrs.BaseOpenmrsMetadata;
@@ -26,6 +26,8 @@ public class Migration extends BaseOpenmrsMetadata {
 	private String middleName;
 	
 	private String familyNamePrefix;
+	
+	private Facility facility;
 	
 	public String getFamily_name2() {
 		return family_name2;
@@ -106,6 +108,14 @@ public class Migration extends BaseOpenmrsMetadata {
 	private String familyName2;
 	
 	private String familyNameSuffix;
+	
+	public Facility getFacility() {
+		return facility;
+	}
+	
+	public void setFacility(Facility facility) {
+		this.facility = facility;
+	}
 	
 	@Override
 	public Integer getId() {
