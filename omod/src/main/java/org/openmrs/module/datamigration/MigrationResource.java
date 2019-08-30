@@ -8,6 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.util.FactoryUtils;
+import org.openmrs.module.datamigration.util.Model.Migration;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -24,7 +26,7 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/Encounters", supportedClass = Migration.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE, supportedClass = Migration.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
 public class MigrationResource extends MetadataDelegatingCrudResource<Migration> {
 	
@@ -50,7 +52,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 			description.addProperty("givenName");
 			description.addProperty("middleName");
 			description.addProperty("familyName");
-			description.addProperty("family_name2");/*
+			description.addProperty("family_name2");
+			description.addProperty("facility", Representation.REF);
+			description.addProperty("address", Representation.REF);
+			/*
 			                                        description.addProperty("creator");
 			                                        description.addProperty("date_created");
 			                                        description.addProperty("phone");
@@ -85,19 +90,15 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	
 	@Override
 	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
-		Migration var = delegate;
 		
-		/*DbConnection connection = new DbConnection();
-		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));*/
-		/*try {
-			ObjectMapper mapper = new ObjectMapper();
-			Example lib = mapper.readValue(delegate.getJson(), Example.class);
+		try {
+			FactoryUtils factoryUtils = new FactoryUtils();
+			factoryUtils.PatientUtils(delegate);
 		}
 		catch (Exception ex) {
-
+			
 		}
-		System.out.println(delegate.getJson());*/
+		//System.out.println(delegate.getJson());
 		
 		return null;
 	}
@@ -111,7 +112,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		description.addProperty("givenName");
 		description.addProperty("middleName");
 		description.addProperty("familyName");
-		description.addProperty("family_name2");/*
+		description.addProperty("family_name2");
+		description.addProperty("facility");
+		description.addProperty("address");
+		/*
 		                                        description.addProperty("creator");
 		                                        description.addProperty("date_created");
 		                                        description.addProperty("phone");
@@ -138,4 +142,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		throw new ResourceDoesNotSupportOperationException();
 	}
 	
+	/*@Override
+	public Model getCREATEModel(Representation rep){
+		return new ModelImpl()
+				.property("facility", new RefProperty("#/definition/FacilityCreate"));
+	}*/
 }

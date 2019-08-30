@@ -8,8 +8,7 @@
  */
 package org.openmrs.module.datamigration;
 
-import org.openmrs.module.datamigration.api.dao.DbConnection;
-import org.openmrs.module.datamigration.util.FactoryUtils;
+import org.openmrs.module.datamigration.util.Model.Facility;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -28,12 +27,12 @@ import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
 import java.util.Properties;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/anything", supportedClass = AnyThing.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/facility", supportedClass = Facility.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
+public class FacilityResource extends MetadataDelegatingCrudResource<Facility> {
 	
 	@Override
-	protected NeedsPaging<AnyThingResource> doGetAll(RequestContext context) {
+	protected NeedsPaging<FacilityResource> doGetAll(RequestContext context) {
 		return null;
 	}
 	
@@ -48,12 +47,12 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("json");
+			description.addProperty("facilityName");
+			
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("json");
 			description.addSelfLink();
 			if (rep instanceof DefaultRepresentation) {
 				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
@@ -68,12 +67,12 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 	}
 	
 	@Override
-	public AnyThing newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new AnyThing();
+	public Facility newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new Facility();
 	}
 	
 	@Override
-	public AnyThing save(AnyThing delegate) throws ResourceDoesNotSupportOperationException {
+	public Facility save(Facility delegate) throws ResourceDoesNotSupportOperationException {
 		Properties runtimeProperties = new Properties();
 		runtimeProperties.setProperty("connection.username", "root");
 		runtimeProperties.setProperty("connection.password", "P@ssw0rd");
@@ -91,17 +90,17 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		description.addRequiredProperty("json");
+		description.addRequiredProperty("facilityName");
 		return description;
 	}
 	
 	@Override
-	public AnyThing getByUniqueId(String uniqueId) {
+	public Facility getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(AnyThing delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(Facility delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override

@@ -2,30 +2,26 @@ package org.openmrs.module.datamigration.util;
 
 import org.openmrs.Location;
 import org.openmrs.api.context.Context;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import org.openmrs.module.datamigration.util.Model.Address;
+import org.openmrs.module.datamigration.util.Model.Facility;
+import org.openmrs.module.datamigration.util.Model.Migration;
 
 public abstract class LocationUtil {
 	
-	public static Location InsertLocation(Connection connection, String sql) {
+	public static Location InsertLocation(Facility facility/*, Address address*/) {
 		try {
-			Statement statement = connection.createStatement();
-			ResultSet result = statement.executeQuery(sql);
 			Location location = null;
-			if (result.next()) {
-				location = new Location();
-				location.setAddress1(result.getString(result.findColumn("lga")));
-				location.setName(result.getString(result.findColumn("facilityname")));
-				
-				//check if location exists
-				Location l = Context.getLocationService().getLocation(location.getName());
-				if (l != null) {
-					return l;
-				}
-				Context.getLocationService().saveLocation(location);
+			location = new Location();
+			location.setAddress1(facility.getFacilityName());
+			location.setName(facility.getFacilityName());
+			location.setCountry("Nigeria");
+			
+			//check if location exists
+			Location l = Context.getLocationService().getLocation(location.getName());
+			if (l != null) {
+				return l;
 			}
+			Context.getLocationService().saveLocation(location);
 			return location;
 		}
 		catch (Exception e) {
