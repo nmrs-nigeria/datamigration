@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/rest/" + RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE)
 public class NigeriaEmrRestController extends MainResourceController {
 	
-	public static final String NG_NAMESPACE = "/ng";
+	public static final String NG_NAMESPACE = "/migration";
 	
 	@Override
 	public String getNamespace() {
