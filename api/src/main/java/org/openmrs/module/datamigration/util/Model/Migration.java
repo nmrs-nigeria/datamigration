@@ -44,6 +44,18 @@ public class Migration extends BaseOpenmrsMetadata {
 	
 	private String familyName;
 	
+	private Facility facility;
+	
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+	
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 	public String getFamilyName() {
 		return familyName;
 	}
@@ -59,8 +71,6 @@ public class Migration extends BaseOpenmrsMetadata {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	private Facility facility;
 	
 	public String getPreferred() {
 		return preferred;

@@ -1,13 +1,14 @@
 package org.openmrs.module.datamigration.util.Model;
 
 import org.codehaus.jackson.annotate.*;
+import org.openmrs.BaseOpenmrsMetadata;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @JsonPropertyOrder({ "country", "latitude", "longitude", "address1", "address2", "address3", "city_village",
         "state_province", "postal_code" })
-public class Address {
+public class Address extends BaseOpenmrsMetadata {
 	
 	@JsonProperty("country")
 	private String country;
@@ -170,4 +171,13 @@ public class Address {
 		this.additionalProperties.put(name, value);
 	}
 	
+	@Override
+	public Integer getId() {
+		return null;
+	}
+	
+	@Override
+	public void setId(Integer integer) {
+		
+	}
 }

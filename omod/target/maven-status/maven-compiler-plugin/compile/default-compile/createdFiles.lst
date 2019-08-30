@@ -5,3 +5,4 @@ org/openmrs/module/datamigration/AnyThingResource.class
 org/openmrs/module/datamigration/MigrationResource.class
 org/openmrs/module/datamigration/web/controller/DataMigrationController.class
 org/openmrs/module/datamigration/FacilityResource.class
+org/openmrs/module/datamigration/AddressResource.class
