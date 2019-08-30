@@ -5,6 +5,7 @@ import org.openmrs.Patient;
 import org.openmrs.PatientIdentifier;
 import org.openmrs.PersonName;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.datamigration.Migration;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,14 +17,14 @@ import java.util.TreeSet;
 
 public abstract class PatientUtil {
 	
-	public static Patient InsertPatient(Connection connection, ResultSet result, Location location) {
+	public static Patient InsertPatient(Migration delegate, Location location) {
 		try {
 			Patient patient = new Patient();
 			//handle patient identifiers
 			Set<PatientIdentifier> patientIdentifiers = new TreeSet<PatientIdentifier>();
 			
 			PatientIdentifier patientIdentifier = new PatientIdentifier();
-			patientIdentifier.setIdentifier(result.getString(result.findColumn("pepId")));
+			patientIdentifier.setIdentifier(delegate.getHospitalNo());
 			patientIdentifier.setLocation(location);
 			patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(4));
 			patientIdentifier.setPreferred(true);
@@ -32,8 +33,7 @@ public abstract class PatientUtil {
 			//handle patient
 			patient.setIdentifiers(patientIdentifiers);
 			
-			patient.addName(new PersonName(result.getString(result.findColumn("surname")), result.getString(result
-			        .findColumn("othernames")), result.getString(result.findColumn("surname"))));
+			patient.addName(new PersonName(delegate.getGivenName(), delegate.getMiddleName(), delegate.getFamilyName()));
 			patient.setBirthdate(new Date());
 			patient.setGender("M");
 			
