@@ -30,7 +30,7 @@ import java.util.Properties;
 
 @Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/address", supportedClass = Address.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class AddressResource extends MetadataDelegatingCrudResource<Facility> {
+public class AddressResource extends MetadataDelegatingCrudResource<Address> {
 	
 	@Override
 	protected NeedsPaging<AddressResource> doGetAll(RequestContext context) {
@@ -47,6 +47,7 @@ public class AddressResource extends MetadataDelegatingCrudResource<Facility> {
 		DelegatingResourceDescription description = null;
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
+			description.addProperty("uuid");
 			description.addProperty("country");
 			description.addProperty("latitude");
 			description.addProperty("longitude");
@@ -60,6 +61,7 @@ public class AddressResource extends MetadataDelegatingCrudResource<Facility> {
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
+			description.addProperty("uuid");
 			description.addProperty("country");
 			description.addProperty("latitude");
 			description.addProperty("longitude");
@@ -83,22 +85,12 @@ public class AddressResource extends MetadataDelegatingCrudResource<Facility> {
 	}
 	
 	@Override
-	public Facility newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Facility();
+	public Address newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new Address();
 	}
 	
 	@Override
-	public Facility save(Facility delegate) throws ResourceDoesNotSupportOperationException {
-		Properties runtimeProperties = new Properties();
-		runtimeProperties.setProperty("connection.username", "root");
-		runtimeProperties.setProperty("connection.password", "P@ssw0rd");
-		runtimeProperties.setProperty("connection.url",
-		    "jdbc:mysql://127.0.0.1:3306/apindb?zeroDateTimeBehavior=convertToNull");
-		
-		/*DbConnection connection = new DbConnection();
-		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));*/
-		//System.out.println(delegate.getJson());
+	public Address save(Address delegate) throws ResourceDoesNotSupportOperationException {
 		
 		return null;
 	}
@@ -106,17 +98,25 @@ public class AddressResource extends MetadataDelegatingCrudResource<Facility> {
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		description.addRequiredProperty("facilityName");
+		description.addProperty("country");
+		description.addProperty("latitude");
+		description.addProperty("longitude");
+		description.addProperty("address1");
+		description.addProperty("address2");
+		description.addProperty("address3");
+		description.addProperty("cityVillage");
+		description.addProperty("stateProvince");
+		description.addProperty("postalCode");
 		return description;
 	}
 	
 	@Override
-	public Facility getByUniqueId(String uniqueId) {
+	public Address getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Facility delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(Address delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override
