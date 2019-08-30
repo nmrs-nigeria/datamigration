@@ -48,6 +48,9 @@ public class FacilityResource extends MetadataDelegatingCrudResource<Facility> {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
 			description.addProperty("facilityName");
+			description.addProperty("datimCode");
+			description.addProperty("lga");
+			description.addProperty("State");
 			
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
