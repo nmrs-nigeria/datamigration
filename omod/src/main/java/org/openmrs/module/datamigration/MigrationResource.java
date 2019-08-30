@@ -8,6 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.api.dao.DbConnection;
+import org.openmrs.module.datamigration.util.FactoryUtils;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -85,19 +87,18 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	
 	@Override
 	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
-		Migration var = delegate;
 		
-		/*DbConnection connection = new DbConnection();
+		DbConnection connection = new DbConnection();
 		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));*/
-		/*try {
-			ObjectMapper mapper = new ObjectMapper();
-			Example lib = mapper.readValue(delegate.getJson(), Example.class);
+		factoryUtils.PatientUtils(delegate);
+		try {
+			/*ObjectMapper mapper = new ObjectMapper();
+			Example lib = mapper.readValue(delegate.getJson(), Example.class);*/
 		}
 		catch (Exception ex) {
-
+			
 		}
-		System.out.println(delegate.getJson());*/
+		//System.out.println(delegate.getJson());
 		
 		return null;
 	}
