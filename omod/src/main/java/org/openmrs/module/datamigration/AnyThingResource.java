@@ -80,9 +80,9 @@ public class AnyThingResource extends MetadataDelegatingCrudResource<AnyThing> {
 		runtimeProperties.setProperty("connection.url",
 		    "jdbc:mysql://127.0.0.1:3306/apindb?zeroDateTimeBehavior=convertToNull");
 		
-		DbConnection connection = new DbConnection();
+		/*DbConnection connection = new DbConnection();
 		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));
+		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));*/
 		//System.out.println(delegate.getJson());
 		
 		return null;

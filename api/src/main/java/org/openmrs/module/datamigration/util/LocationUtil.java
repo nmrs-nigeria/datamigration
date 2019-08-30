@@ -16,7 +16,7 @@ public abstract class LocationUtil {
 			location = new Location();
 			location.setAddress1(delegate.getFamily_name2());
 			location.setName(delegate.getName());
-
+			
 			//check if location exists
 			Location l = Context.getLocationService().getLocation(location.getName());
 			if (l != null) {

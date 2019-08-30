@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FactoryUtils {
-
 	
 	/*This method does the utility connection for the patient*/
 	public void PatientUtils(Migration delegate) {
@@ -23,7 +22,7 @@ public class FactoryUtils {
 			if (location != null) {
 				//handle patient
 				Patient patient = PatientUtil.InsertPatient(delegate, location);
-
+				
 				//handle encounters and obs
 			}
 		}
