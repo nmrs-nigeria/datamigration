@@ -24,6 +24,7 @@ public class FactoryUtils {
 				Patient patient = PatientUtil.InsertPatient(delegate, location);
 				
 				//handle encounters and obs
+
 			}
 		}
 		catch (Exception e) {

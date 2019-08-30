@@ -87,13 +87,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	
 	@Override
 	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
-		
-		DbConnection connection = new DbConnection();
-		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(delegate);
+
 		try {
-			/*ObjectMapper mapper = new ObjectMapper();
-			Example lib = mapper.readValue(delegate.getJson(), Example.class);*/
+			FactoryUtils factoryUtils = new FactoryUtils();
+			factoryUtils.PatientUtils(delegate);
 		}
 		catch (Exception ex) {
 			
