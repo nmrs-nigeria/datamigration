@@ -8,8 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
-import org.openmrs.module.datamigration.util.FactoryUtils;
-import org.openmrs.module.datamigration.util.Model.Migration;
+import org.openmrs.module.datamigration.util.Model.Address;
+import org.openmrs.module.datamigration.util.Model.Facility;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -26,12 +26,14 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE, supportedClass = Migration.class, supportedOpenmrsVersions = {
+import java.util.Properties;
+
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/address", supportedClass = Address.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class MigrationResource extends MetadataDelegatingCrudResource<Migration> {
+public class AddressResource extends MetadataDelegatingCrudResource<Address> {
 	
 	@Override
-	protected NeedsPaging<MigrationResource> doGetAll(RequestContext context) {
+	protected NeedsPaging<AddressResource> doGetAll(RequestContext context) {
 		return null;
 	}
 	
@@ -46,27 +48,29 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("preferred");
-			description.addProperty("hospitalNo");
-			description.addProperty("prefix");
-			description.addProperty("givenName");
-			description.addProperty("middleName");
-			description.addProperty("familyName");
-			description.addProperty("lastName");
-			description.addProperty("birthDate");
-			description.addProperty("gender");
-			description.addProperty("birthdateEstimated");
-			description.addProperty("dead");
-			description.addProperty("deathDate");
-			description.addProperty("causeOfDeath");
-			description.addProperty("facility", Representation.REF);
-			description.addProperty("address", Representation.REF);
+			description.addProperty("country");
+			description.addProperty("latitude");
+			description.addProperty("longitude");
+			description.addProperty("address1");
+			description.addProperty("address2");
+			description.addProperty("address3");
+			description.addProperty("cityVillage");
+			description.addProperty("stateProvince");
+			description.addProperty("postalCode");
 			
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("encounterDatetime");
+			description.addProperty("country");
+			description.addProperty("latitude");
+			description.addProperty("longitude");
+			description.addProperty("address1");
+			description.addProperty("address2");
+			description.addProperty("address3");
+			description.addProperty("cityVillage");
+			description.addProperty("stateProvince");
+			description.addProperty("postalCode");
 			description.addSelfLink();
 			if (rep instanceof DefaultRepresentation) {
 				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
@@ -76,64 +80,43 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Migration logentry) {
+	public String getDisplay(AnyThing logentry) {
 		return null;
 	}
 	
 	@Override
-	public Migration newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Migration();
+	public Address newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new Address();
 	}
 	
 	@Override
-	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
+	public Address save(Address delegate) throws ResourceDoesNotSupportOperationException {
 		
-		try {
-			FactoryUtils factoryUtils = new FactoryUtils();
-			factoryUtils.PatientUtils(delegate);
-		}
-		catch (Exception ex) {
-			try {
-				throw ex.getCause();
-			}
-			catch (Throwable throwable) {
-				throwable.printStackTrace();
-			}
-		}
-		//System.out.println(delegate.getJson());
-		
-		return delegate;
+		return null;
 	}
 	
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		
-		description.addProperty("preferred");
-		description.addProperty("hospitalNo");
-		description.addProperty("prefix");
-		description.addProperty("givenName");
-		description.addProperty("middleName");
-		description.addProperty("familyName");
-		description.addProperty("lastName");
-		description.addProperty("birthDate");
-		description.addProperty("gender");
-		description.addProperty("birthdateEstimated");
-		description.addProperty("dead");
-		description.addProperty("deathDate");
-		description.addProperty("causeOfDeath");
-		description.addProperty("facility");
-		description.addProperty("address");
+		description.addProperty("country");
+		description.addProperty("latitude");
+		description.addProperty("longitude");
+		description.addProperty("address1");
+		description.addProperty("address2");
+		description.addProperty("address3");
+		description.addProperty("cityVillage");
+		description.addProperty("stateProvince");
+		description.addProperty("postalCode");
 		return description;
 	}
 	
 	@Override
-	public Migration getByUniqueId(String uniqueId) {
+	public Address getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Migration delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(Address delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override
@@ -141,9 +124,4 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		throw new ResourceDoesNotSupportOperationException();
 	}
 	
-	/*@Override
-	public Model getCREATEModel(Representation rep){
-		return new ModelImpl()
-				.property("facility", new RefProperty("#/definition/FacilityCreate"));
-	}*/
 }

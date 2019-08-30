@@ -20,6 +20,12 @@ public class FactoryUtils {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			try {
+				throw e.getCause();
+			}
+			catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
 		}
 		
 	}

@@ -7,14 +7,18 @@ import org.openmrs.PersonName;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.datamigration.util.Model.Migration;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 
 public abstract class PatientUtil {
 	
-	public static Patient InsertPatient(Migration delegate, Location location) {
+	public static Patient InsertPatient(final Migration delegate, Location location) {
 		try {
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			Patient patient = new Patient();
 			//handle patient identifiers
 			Set<PatientIdentifier> patientIdentifiers = new TreeSet<PatientIdentifier>();
@@ -30,11 +34,19 @@ public abstract class PatientUtil {
 			patient.setIdentifiers(patientIdentifiers);
 			
 			patient.addName(new PersonName(delegate.getGivenName(), delegate.getMiddleName(), delegate.getFamilyName()));
-			patient.setBirthdate(new Date());
-			patient.setGender("M");
+			patient.setBirthdate(dateFormat.parse(delegate.getBirthDate()));
+			patient.setGender(delegate.getGender());
+			patient.setDead(Boolean.parseBoolean(delegate.getDead()));
+			patient.setDeathDate(delegate.getDeathDate() != null ? dateFormat.parse(delegate.getDeathDate()) : null);
+			//patient.setCauseOfDeath(delegate.getCauseOfDeath());
 			
 			//check if the patient exists
-			Patient p = Context.getPatientService().getPatientByExample(patient);
+			//String pp = Context.getPatientService().getAllPatients().get(0).getPatientIdentifier(4).getPatient().getPatientIdentifier().getIdentifier();
+			Patient p = Context.getPatientService().getAllPatients().stream()
+					.filter(x-> x.getPatientIdentifier(4).getIdentifier().equals(delegate.getHospitalNo()))
+					.findFirst().orElse(null);
+			if(p != null)
+				return p;
 			//handle patient save to openmrs
 			Context.getPatientService().savePatient(patient);
 			return patient;

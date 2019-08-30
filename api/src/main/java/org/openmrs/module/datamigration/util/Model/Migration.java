@@ -1,6 +1,5 @@
 package org.openmrs.module.datamigration.util.Model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.openmrs.BaseOpenmrsMetadata;
 
 import java.util.Date;
@@ -25,21 +24,53 @@ public class Migration extends BaseOpenmrsMetadata {
 	
 	private String middleName;
 	
-	private String familyNamePrefix;
+	private String lastName;
 	
-	private Facility facility;
+	private String creator;
 	
-	public String getFamily_name2() {
-		return family_name2;
-	}
+	private String dateCreated;
 	
-	public void setFamily_name2(String family_name2) {
-		this.family_name2 = family_name2;
-	}
+	private String birthDate;
+	
+	private String birthdateEstimated;
+	
+	private String dead;
+	
+	private String deathDate;
+	
+	private String causeOfDeath;
+	
+	private String gender;
 	
 	private String familyName;
 	
-	private String family_name2;
+	private Facility facility;
+	
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+	
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public String getFamilyName() {
+		return familyName;
+	}
+	
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
+	
+	public String getGender() {
+		return gender;
+	}
+	
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	
 	public String getPreferred() {
 		return preferred;
@@ -73,41 +104,53 @@ public class Migration extends BaseOpenmrsMetadata {
 		this.middleName = middleName;
 	}
 	
-	public String getFamilyNamePrefix() {
-		return familyNamePrefix;
+	public String getLastName() {
+		return lastName;
 	}
 	
-	public void setFamilyNamePrefix(String familyNamePrefix) {
-		this.familyNamePrefix = familyNamePrefix;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
-	public String getFamilyName() {
-		return familyName;
+	public String getBirthDate() {
+		return birthDate;
 	}
 	
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 	
-	public String getFamilyName2() {
-		return familyName2;
+	public String getBirthdateEstimated() {
+		return birthdateEstimated;
 	}
 	
-	public void setFamilyName2(String familyName2) {
-		this.familyName2 = familyName2;
+	public void setBirthdateEstimated(String birthdateEstimated) {
+		this.birthdateEstimated = birthdateEstimated;
 	}
 	
-	public String getFamilyNameSuffix() {
-		return familyNameSuffix;
+	public String getDead() {
+		return dead;
 	}
 	
-	public void setFamilyNameSuffix(String familyNameSuffix) {
-		this.familyNameSuffix = familyNameSuffix;
+	public void setDead(String dead) {
+		this.dead = dead;
 	}
 	
-	private String familyName2;
+	public String getDeathDate() {
+		return deathDate;
+	}
 	
-	private String familyNameSuffix;
+	public void setDeathDate(String deathDate) {
+		this.deathDate = deathDate;
+	}
+	
+	public String getCauseOfDeath() {
+		return causeOfDeath;
+	}
+	
+	public void setCauseOfDeath(String causeOfDeath) {
+		this.causeOfDeath = causeOfDeath;
+	}
 	
 	public Facility getFacility() {
 		return facility;
