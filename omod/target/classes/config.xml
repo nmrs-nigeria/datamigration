@@ -4,12 +4,12 @@
 	
 	<!-- Base Module Properties -->
 	<id>datamigration</id>
-	<name>Data Migration</name>
-	<version>1.0.0-SNAPSHOT</version>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
 	<package>org.openmrs.module.datamigration</package>
 	<author>JOHNBOSCO</author>
 	<description>
-			For migrating data from each EMR to NMRS
+			${project.parent.description}
 	</description>
 
 	<activator>org.openmrs.module.datamigration.DataMigrationActivator</activator>

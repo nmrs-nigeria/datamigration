@@ -1,4 +1,4 @@
-package org.openmrs.module.datamigration.Model;
+package org.openmrs.module.datamigration.util.Model;
 
 import org.codehaus.jackson.annotate.*;
 
