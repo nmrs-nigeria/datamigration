@@ -1,8 +1,8 @@
-package org.openmrs.module.datamigration;
+package org.openmrs.module.datamigration.util.Model;
 
 import org.openmrs.BaseOpenmrsMetadata;
 
-public class Identifiers extends BaseOpenmrsMetadata {
+public class mIdentifiers extends BaseOpenmrsMetadata {
 	
 	String identifier;
 	

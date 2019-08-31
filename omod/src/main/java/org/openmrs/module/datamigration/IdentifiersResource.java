@@ -8,6 +8,7 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.util.Model.mIdentifiers;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -24,9 +25,9 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/identifiers", supportedClass = Identifiers.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/identifiers", supportedClass = mIdentifiers.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class IdentifiersResource extends MetadataDelegatingCrudResource<Identifiers> {
+public class IdentifiersResource extends MetadataDelegatingCrudResource<mIdentifiers> {
 	
 	@Override
 	protected NeedsPaging<IdentifiersResource> doGetAll(RequestContext context) {
@@ -65,18 +66,18 @@ public class IdentifiersResource extends MetadataDelegatingCrudResource<Identifi
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Identifiers logentry) {
+	public String getDisplay(mIdentifiers logentry) {
 		return null;
 	}
 	
 	@Override
-	public Identifiers newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Identifiers();
+	public mIdentifiers newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new mIdentifiers();
 	}
 	
 	@Override
-	public Identifiers save(Identifiers delegate) throws ResourceDoesNotSupportOperationException {
-		Identifiers var = delegate;
+	public mIdentifiers save(mIdentifiers delegate) throws ResourceDoesNotSupportOperationException {
+		mIdentifiers var = delegate;
 		
 		return null;
 	}
@@ -92,12 +93,12 @@ public class IdentifiersResource extends MetadataDelegatingCrudResource<Identifi
 	}
 	
 	@Override
-	public Identifiers getByUniqueId(String uniqueId) {
+	public mIdentifiers getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Identifiers delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(mIdentifiers delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override

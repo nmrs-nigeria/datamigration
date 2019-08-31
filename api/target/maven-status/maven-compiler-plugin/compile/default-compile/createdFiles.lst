@@ -1,16 +1,17 @@
-org\openmrs\module\datamigration\util\Model\Obs.class
+org\openmrs\module\datamigration\util\Model\mEncounter.class
 org\openmrs\module\datamigration\api\impl\DataMigrationServiceImpl.class
-org\openmrs\module\datamigration\util\Model\Encounter.class
 org\openmrs\module\datamigration\util\Model\Location.class
 org\openmrs\module\datamigration\util\Model\Address.class
 org\openmrs\module\datamigration\util\PatientUtil.class
 org\openmrs\module\datamigration\DataMigrationConfig.class
+org\openmrs\module\datamigration\util\Model\mIdentifiers.class
 org\openmrs\module\datamigration\util\Model\Form.class
 org\openmrs\module\datamigration\Item.class
 org\openmrs\module\datamigration\util\Model\Identifier.class
 org\openmrs\module\datamigration\util\Model\Demographics.class
 org\openmrs\module\datamigration\util\Model\Facility.class
 org\openmrs\module\datamigration\util\Model\Migration.class
+org\openmrs\module\datamigration\util\Model\mObs.class
 org\openmrs\module\datamigration\api\dao\DbConnection.class
 org\openmrs\module\datamigration\util\LocationUtil.class
 org\openmrs\module\datamigration\NmrsConnection.class
@@ -20,5 +21,4 @@ org\openmrs\module\datamigration\DataMigrationActivator.class
 org\openmrs\module\datamigration\AnyThing.class
 org\openmrs\module\datamigration\api\DataMigrationService.class
 org\openmrs\module\datamigration\api\dao\DataMigrationDao.class
-org\openmrs\module\datamigration\util\Model\Example.class
 org\openmrs\module\datamigration\util\OptionsUtils.class

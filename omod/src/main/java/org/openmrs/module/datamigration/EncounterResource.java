@@ -8,6 +8,8 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.util.Model.mEncounter;
+import org.openmrs.module.datamigration.util.Model.mIdentifiers;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -24,9 +26,9 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/identifiers", supportedClass = Encounter.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/identifiers", supportedClass = mEncounter.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class EncounterResource extends MetadataDelegatingCrudResource<Encounter> {
+public class EncounterResource extends MetadataDelegatingCrudResource<mEncounter> {
 	
 	@Override
 	protected NeedsPaging<EncounterResource> doGetAll(RequestContext context) {
@@ -37,7 +39,7 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	protected PageableResult doSearch(RequestContext context) {
 		return null;
 	}
-
+	
 	@Override
 	public DelegatingResourceDescription getRepresentationDescription(Representation rep) {
 		DelegatingResourceDescription description = null;
@@ -65,18 +67,18 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Identifiers logentry) {
+	public String getDisplay(mIdentifiers logentry) {
 		return null;
 	}
 	
 	@Override
-	public Encounter newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Encounter();
+	public mEncounter newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new mEncounter();
 	}
 	
 	@Override
-	public Encounter save(Encounter delegate) throws ResourceDoesNotSupportOperationException {
-		Encounter var = delegate;
+	public mEncounter save(mEncounter delegate) throws ResourceDoesNotSupportOperationException {
+		mEncounter var = delegate;
 		
 		return null;
 	}
@@ -92,12 +94,12 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	}
 	
 	@Override
-	public Encounter getByUniqueId(String uniqueId) {
+	public mEncounter getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Encounter delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(mEncounter delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override

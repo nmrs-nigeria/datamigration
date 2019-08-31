@@ -19,7 +19,7 @@ public class Form {
 	private String dateCreated;
 	
 	@JsonProperty("obs")
-	private List<Obs> obs = null;
+	private List<mObs> obs = null;
 	
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -36,7 +36,7 @@ public class Form {
 	 * @param locationId
 	 * @param dateCreated
 	 */
-	public Form(String formTypeId, String locationId, String dateCreated, List<Obs> obs) {
+	public Form(String formTypeId, String locationId, String dateCreated, List<mObs> obs) {
 		super();
 		this.formTypeId = formTypeId;
 		this.locationId = locationId;
@@ -75,12 +75,12 @@ public class Form {
 	}
 	
 	@JsonProperty("obs")
-	public List<Obs> getObs() {
+	public List<mObs> getObs() {
 		return obs;
 	}
 	
 	@JsonProperty("obs")
-	public void setObs(List<Obs> obs) {
+	public void setObs(List<mObs> obs) {
 		this.obs = obs;
 	}
 	

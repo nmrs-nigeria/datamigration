@@ -61,6 +61,8 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 			description.addProperty("causeOfDeath");
 			description.addProperty("facility", Representation.REF);
 			description.addProperty("address", Representation.REF);
+			description.addProperty("identifier", Representation.REF);
+			description.addProperty("encounter", Representation.REF);
 			
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {

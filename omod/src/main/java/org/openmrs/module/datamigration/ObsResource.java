@@ -8,6 +8,7 @@
  */
 package org.openmrs.module.datamigration;
 
+import org.openmrs.module.datamigration.util.Model.mObs;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -24,9 +25,9 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/obs", supportedClass = Obs.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/obs", supportedClass = mObs.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
+public class ObsResource extends MetadataDelegatingCrudResource<mObs> {
 	
 	@Override
 	protected NeedsPaging<ObsResource> doGetAll(RequestContext context) {
@@ -63,18 +64,18 @@ public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Obs logentry) {
+	public String getDisplay(mObs logentry) {
 		return null;
 	}
 	
 	@Override
-	public Obs newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Obs();
+	public mObs newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new mObs();
 	}
 	
 	@Override
-	public Obs save(Obs delegate) throws ResourceDoesNotSupportOperationException {
-		Obs var = delegate;
+	public mObs save(mObs delegate) throws ResourceDoesNotSupportOperationException {
+		mObs var = delegate;
 		
 		return null;
 	}
@@ -89,12 +90,12 @@ public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
 	}
 	
 	@Override
-	public Obs getByUniqueId(String uniqueId) {
+	public mObs getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Obs delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(mObs delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override
