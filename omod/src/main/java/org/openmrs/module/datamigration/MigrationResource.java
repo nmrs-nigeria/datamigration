@@ -129,7 +129,6 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		description.addProperty("address");
 		description.addProperty("identifiers", Representation.REF);
 		description.addProperty("encounters", Representation.REF);
-
 		return description;
 	}
 	
