@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de048a73-2888-49e6-8197-5a8ab18b7cec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/AnyThing.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/AnyThing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/DataMigrationActivator.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/DataMigrationActivator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/DataMigrationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/DataMigrationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/NmrsConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/NmrsConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/DataMigrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/DataMigrationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DataMigrationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DataMigrationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DbConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/impl/DataMigrationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/impl/DataMigrationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/EncounterUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/EncounterUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/LocationUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/LocationUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Demographics.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Demographics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Encounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Encounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Facility.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Facility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Form.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Form.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Identifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Identifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Obs.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Obs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/OptionsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/OptionsUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/PatientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/PatientUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/omod/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/FacilityResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/FacilityResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/FacilityResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/MigrationResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.omod" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.omod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/FacilityResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/MigrationResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de048a73-2888-49e6-8197-5a8ab18b7cec" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/omod/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -575,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567180217404</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Check for existing patient implemented for the server">
+      <created>1567216833049</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1567216833049</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -625,7 +591,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="678" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25151515" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25151515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -635,7 +601,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3753541" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848485" visible="true" weight="0.3151184" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848485" weight="0.3151184" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -644,7 +610,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50151515" side_tool="true" weight="0.3151184" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49932885" weight="0.32786885" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.49932885" visible="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -714,7 +680,8 @@
     <MESSAGE value="Some minor" />
     <MESSAGE value="Some minor change" />
     <MESSAGE value="Check for existing patient implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check for existing patient implemented" />
+    <MESSAGE value="Check for existing patient implemented for the server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check for existing patient implemented for the server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
