@@ -76,16 +76,6 @@ public class FacilityResource extends MetadataDelegatingCrudResource<Facility> {
 	
 	@Override
 	public Facility save(Facility delegate) throws ResourceDoesNotSupportOperationException {
-		Properties runtimeProperties = new Properties();
-		runtimeProperties.setProperty("connection.username", "root");
-		runtimeProperties.setProperty("connection.password", "P@ssw0rd");
-		runtimeProperties.setProperty("connection.url",
-		    "jdbc:mysql://127.0.0.1:3306/apindb?zeroDateTimeBehavior=convertToNull");
-		
-		/*DbConnection connection = new DbConnection();
-		FactoryUtils factoryUtils = new FactoryUtils();
-		factoryUtils.PatientUtils(connection.Connection(runtimeProperties));*/
-		//System.out.println(delegate.getJson());
 		
 		return null;
 	}

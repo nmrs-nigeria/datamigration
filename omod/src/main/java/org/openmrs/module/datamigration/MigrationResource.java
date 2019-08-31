@@ -77,7 +77,9 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	
 	@PropertyGetter("display")
 	public String getDisplay(Migration logentry) {
-		return null;
+		//return null;
+		String ret = logentry.getGivenName() + " inserted";
+		return ret;
 	}
 	
 	@Override

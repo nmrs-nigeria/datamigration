@@ -1,11 +1,15 @@
 package org.openmrs.module.datamigration.util;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
 import org.openmrs.Location;
 import org.openmrs.Patient;
 import org.openmrs.PatientIdentifier;
 import org.openmrs.PersonName;
+import org.openmrs.annotation.Logging;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.datamigration.util.Model.Migration;
+import sun.rmi.runtime.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,18 +45,21 @@ public abstract class PatientUtil {
 			//patient.setCauseOfDeath(delegate.getCauseOfDeath());
 			
 			//check if the patient exists
-			//String pp = Context.getPatientService().getAllPatients().get(0).getPatientIdentifier(4).getPatient().getPatientIdentifier().getIdentifier();
 			Patient p = Context.getPatientService().getAllPatients().stream()
-					.filter(x-> x.getPatientIdentifier(4).getIdentifier().equals(delegate.getHospitalNo()))
+					.filter(x-> x.getPatientIdentifier(4) != null &&
+							x.getPatientIdentifier(4).getIdentifier().equals(delegate.getHospitalNo()))
 					.findFirst().orElse(null);
+
 			if(p != null)
 				return p;
+
 			//handle patient save to openmrs
 			Context.getPatientService().savePatient(patient);
 			return patient;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			Logger.getLogger(PatientUtil.class).log(Priority.ERROR, e.getMessage());
 			return null;
 		}
 	}
