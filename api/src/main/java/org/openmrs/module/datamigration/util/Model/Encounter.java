@@ -1,97 +1,69 @@
 package org.openmrs.module.datamigration.util.Model;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.openmrs.BaseOpenmrsMetadata;
 
-import org.codehaus.jackson.annotate.*;
+import java.util.*;
 
-@JsonPropertyOrder({ "encounterTypeId", "encounterLocatiionId", "encounterDate", "form" })
-public class Encounter {
+public class Encounter extends BaseOpenmrsMetadata {
 	
-	@JsonProperty("encounterTypeId")
-	private String encounterTypeId;
+	Integer encounterId;
 	
-	@JsonProperty("encounterLocatiionId")
-	private String encounterLocatiionId;
+	Integer encounterLocationId;
 	
-	@JsonProperty("encounterDate")
-	private String encounterDate;
+	Date encounterDate;
 	
-	@JsonProperty("form")
-	private List<Form> form = null;
+	Integer formTypeId;
 	
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	Set<Obs> obs;
 	
-	/**
-	 * No args constructor for use in serialization
-	 */
-	public Encounter() {
+	public Integer getEncounterId() {
+		return encounterId;
 	}
 	
-	/**
-	 * @param encounterLocatiionId
-	 * @param form
-	 * @param encounterTypeId
-	 * @param encounterDate
-	 */
-	public Encounter(String encounterTypeId, String encounterLocatiionId, String encounterDate, List<Form> form) {
-		super();
-		this.encounterTypeId = encounterTypeId;
-		this.encounterLocatiionId = encounterLocatiionId;
-		this.encounterDate = encounterDate;
-		this.form = form;
+	public void setEncounterId(Integer encounterId) {
+		this.encounterId = encounterId;
 	}
 	
-	@JsonProperty("encounterTypeId")
-	public String getEncounterTypeId() {
-		return encounterTypeId;
+	public Set<Obs> getObs() {
+		return obs;
 	}
 	
-	@JsonProperty("encounterTypeId")
-	public void setEncounterTypeId(String encounterTypeId) {
-		this.encounterTypeId = encounterTypeId;
+	public void setObs(Set<Obs> obs) {
+		this.obs = obs;
 	}
 	
-	@JsonProperty("encounterLocatiionId")
-	public String getEncounterLocatiionId() {
-		return encounterLocatiionId;
+	public Integer getEncounterLocationId() {
+		
+		return encounterLocationId;
 	}
 	
-	@JsonProperty("encounterLocatiionId")
-	public void setEncounterLocatiionId(String encounterLocatiionId) {
-		this.encounterLocatiionId = encounterLocatiionId;
+	public void setEncounterLocationId(Integer encounterLocationId) {
+		this.encounterLocationId = encounterLocationId;
 	}
 	
-	@JsonProperty("encounterDate")
-	public String getEncounterDate() {
+	public Date getEncounterDate() {
 		return encounterDate;
 	}
 	
-	@JsonProperty("encounterDate")
-	public void setEncounterDate(String encounterDate) {
+	public void setEncounterDate(Date encounterDate) {
 		this.encounterDate = encounterDate;
 	}
 	
-	@JsonProperty("form")
-	public List<Form> getForm() {
-		return form;
+	public Integer getFormTypeId() {
+		return formTypeId;
 	}
 	
-	@JsonProperty("form")
-	public void setForm(List<Form> form) {
-		this.form = form;
+	public void setFormTypeId(Integer formTypeId) {
+		this.formTypeId = formTypeId;
 	}
 	
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
+	@Override
+	public Integer getId() {
+		return null;
 	}
 	
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	@Override
+	public void setId(Integer integer) {
+		
 	}
-	
 }

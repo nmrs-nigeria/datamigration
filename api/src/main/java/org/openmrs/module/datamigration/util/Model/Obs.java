@@ -1,81 +1,46 @@
 package org.openmrs.module.datamigration.util.Model;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.openmrs.BaseOpenmrsMetadata;
 
-import org.codehaus.jackson.annotate.*;
-
-@JsonPropertyOrder({ "conceptId", "valueTypeId", "value" })
-public class Obs {
+public class Obs extends BaseOpenmrsMetadata {
 	
-	@JsonProperty("conceptId")
-	private String conceptId;
+	Integer conceptId;
 	
-	@JsonProperty("valueTypeId")
-	private String valueTypeId;
+	String valueTypeId;
 	
-	@JsonProperty("value")
-	private String value;
+	Integer value;
 	
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-	
-	/**
-	 * No args constructor for use in serialization
-	 */
-	public Obs() {
-	}
-	
-	/**
-	 * @param valueTypeId
-	 * @param conceptId
-	 * @param value
-	 */
-	public Obs(String conceptId, String valueTypeId, String value) {
-		super();
-		this.conceptId = conceptId;
-		this.valueTypeId = valueTypeId;
-		this.value = value;
-	}
-	
-	@JsonProperty("conceptId")
-	public String getConceptId() {
+	public Integer getConceptId() {
 		return conceptId;
 	}
 	
-	@JsonProperty("conceptId")
-	public void setConceptId(String conceptId) {
+	public void setConceptId(Integer conceptId) {
 		this.conceptId = conceptId;
 	}
 	
-	@JsonProperty("valueTypeId")
 	public String getValueTypeId() {
 		return valueTypeId;
 	}
 	
-	@JsonProperty("valueTypeId")
 	public void setValueTypeId(String valueTypeId) {
 		this.valueTypeId = valueTypeId;
 	}
 	
-	@JsonProperty("value")
-	public String getValue() {
+	public Integer getValue() {
 		return value;
 	}
 	
-	@JsonProperty("value")
-	public void setValue(String value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 	
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
+	@Override
+	public Integer getId() {
+		return null;
 	}
 	
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	@Override
+	public void setId(Integer integer) {
+		
 	}
-	
 }

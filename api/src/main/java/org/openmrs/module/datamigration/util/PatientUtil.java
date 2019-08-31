@@ -2,12 +2,11 @@ package org.openmrs.module.datamigration.util;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
-import org.openmrs.Location;
-import org.openmrs.Patient;
-import org.openmrs.PatientIdentifier;
-import org.openmrs.PersonName;
+import org.openmrs.*;
 import org.openmrs.annotation.Logging;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.datamigration.util.Model.Address;
+import org.openmrs.module.datamigration.util.Model.Identifier;
 import org.openmrs.module.datamigration.util.Model.Migration;
 import sun.rmi.runtime.Log;
 
@@ -26,14 +25,14 @@ public abstract class PatientUtil {
 			Patient patient = new Patient();
 			//handle patient identifiers
 			Set<PatientIdentifier> patientIdentifiers = new TreeSet<PatientIdentifier>();
-			
-			PatientIdentifier patientIdentifier = new PatientIdentifier();
-			patientIdentifier.setIdentifier(delegate.getHospitalNo());
-			patientIdentifier.setLocation(location);
-			patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(4));
-			patientIdentifier.setPreferred(true);
-			patientIdentifiers.add(patientIdentifier);
-			
+			for (Identifier _id: delegate.getIdentifiers()) {
+				PatientIdentifier patientIdentifier = new PatientIdentifier();
+				patientIdentifier.setIdentifier(_id.getIdentifier());
+				patientIdentifier.setLocation(location);
+				patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(Integer.parseInt(_id.getIdentifierType())));
+				patientIdentifier.setPreferred(Boolean.parseBoolean(_id.getPreferred()));
+				patientIdentifiers.add(patientIdentifier);
+			}
 			//handle patient
 			patient.setIdentifiers(patientIdentifiers);
 			
@@ -43,6 +42,21 @@ public abstract class PatientUtil {
 			patient.setDead(Boolean.parseBoolean(delegate.getDead()));
 			patient.setDeathDate(delegate.getDeathDate() != null ? dateFormat.parse(delegate.getDeathDate()) : null);
 			//patient.setCauseOfDeath(delegate.getCauseOfDeath());
+
+			Set<PersonAddress> addresses = new TreeSet<>();
+			PersonAddress address = new PersonAddress();
+			address.setCountry(delegate.getAddress().getCountry());
+			address.setCityVillage(delegate.getAddress().getCityVillage());
+			address.setAddress1(delegate.getAddress().getAddress1());
+			address.setAddress2(delegate.getAddress().getAddress2());
+			address.setAddress3(delegate.getAddress().getAddress3());
+			address.setLatitude(delegate.getAddress().getLatitude());
+			address.setLongitude(delegate.getAddress().getLongitude());
+			address.setStateProvince(delegate.getAddress().getStateProvince());
+			address.setPostalCode(delegate.getAddress().getPostalCode());
+
+			addresses.add(address);
+			patient.setAddresses(addresses);
 			
 			//check if the patient exists
 			Patient p = Context.getPatientService().getAllPatients().stream()

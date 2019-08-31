@@ -3,6 +3,8 @@ package org.openmrs.module.datamigration.util.Model;
 import org.openmrs.BaseOpenmrsMetadata;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Migration extends BaseOpenmrsMetadata {
 	
@@ -47,6 +49,16 @@ public class Migration extends BaseOpenmrsMetadata {
 	private Facility facility;
 	
 	private Address address;
+
+	Set<Identifier> identifiers = new LinkedHashSet<>();
+
+	public Set<Identifier> getIdentifiers() {
+		return identifiers;
+	}
+
+	public void setIdentifiers(Set<Identifier> identifiers) {
+		this.identifiers = identifiers;
+	}
 	
 	public Address getAddress() {
 		return address;

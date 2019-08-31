@@ -1,12 +1,13 @@
 package org.openmrs.module.datamigration.util.Model;
 
 import org.codehaus.jackson.annotate.*;
+import org.openmrs.BaseOpenmrsMetadata;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @JsonPropertyOrder({ "identifier", "identifierType", "locationId", "preferred" })
-public class Identifier {
+public class Identifier extends BaseOpenmrsMetadata {
 	
 	@JsonProperty("identifier")
 	private String identifier;
@@ -19,29 +20,6 @@ public class Identifier {
 	
 	@JsonProperty("preferred")
 	private String preferred;
-	
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-	
-	/**
-	 * No args constructor for use in serialization
-	 */
-	public Identifier() {
-	}
-	
-	/**
-	 * @param locationId
-	 * @param preferred
-	 * @param identifierType
-	 * @param identifier
-	 */
-	public Identifier(String identifier, String identifierType, String locationId, String preferred) {
-		super();
-		this.identifier = identifier;
-		this.identifierType = identifierType;
-		this.locationId = locationId;
-		this.preferred = preferred;
-	}
 	
 	@JsonProperty("identifier")
 	public String getIdentifier() {
@@ -83,14 +61,13 @@ public class Identifier {
 		this.preferred = preferred;
 	}
 	
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
+	@Override
+	public Integer getId() {
+		return null;
 	}
 	
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	@Override
+	public void setId(Integer integer) {
+		
 	}
-	
 }
