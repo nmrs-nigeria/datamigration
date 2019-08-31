@@ -68,7 +68,6 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("encounterDatetime");
 			description.addSelfLink();
 			if (rep instanceof DefaultRepresentation) {
 				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);

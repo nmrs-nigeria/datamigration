@@ -49,15 +49,12 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 			description.addProperty("encounterId");
 			description.addProperty("encounterLocationId");
 			description.addProperty("formTypeId");
+			description.addProperty("encounterDate");
 			description.addProperty("obs");
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("encounterId");
-			description.addProperty("encounterLocationId");
-			description.addProperty("formTypeId");
-			description.addProperty("obs");
 			description.addSelfLink();
 			if (rep instanceof DefaultRepresentation) {
 				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
@@ -67,7 +64,7 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Identifiers logentry) {
+	public String getDisplay(Encounter logentry) {
 		return null;
 	}
 	
@@ -88,7 +85,9 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
 		description.addProperty("encounterId");
 		description.addProperty("encounterLocationId");
+		description.addProperty("encounterDate");
 		description.addProperty("formTypeId");
+		description.addProperty("encounterDate");
 		description.addProperty("obs");
 		return description;
 	}
