@@ -23,8 +23,32 @@ public abstract class EncounterUtils {
 			Set<Obs> obsSet = new TreeSet<>();
 			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
 				Obs obs = new Obs();
+
+				String obsValueType = _o.getValueTypeId();
+				String obsValue = _o.getValue();
+
+				switch (obsValueType){
+					case "value_numeric" :
+						obs.setValueNumeric(Double.parseDouble(obsValue));
+						break;
+					case "value_coded" :
+						obs.setValueCoded(Context.getConceptService().getConcept(obsValue));
+						break;
+					case "value_datetime" :
+						SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+						Date dateVlue = simpleDateFormat.parse(obsValue);
+						obs.setValueDatetime(dateVlue);
+						break;
+					case "value_text" :
+						obs.setValueText(obsValue);
+						break;
+					default:
+						obs.setValueText("");
+						break;
+				}
 				obs.setConcept(Context.getConceptService().getConcept(_o.getConceptId()));
 				obs.setComment("");
+				obsSet.add(obs);
 			}
 			encounter.setEncounterType(Context.getEncounterService().getEncounterType(delegate.getEncounters().getFormTypeId()));
 			encounter.setObs(obsSet);
