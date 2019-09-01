@@ -362,20 +362,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.openmrs.module.datamigration" />
       <option name="MAIN_CLASS_NAME" value="org.openmrs.module.datamigration.PatientImportTest" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PatientImportTest.shouldImportPatients" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="datamigration-api" />
@@ -385,20 +379,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.openmrs.module.datamigration" />
       <option name="MAIN_CLASS_NAME" value="org.openmrs.module.datamigration.PatientImportTest" />
       <option name="METHOD_NAME" value="shouldImportPatients" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="version 2.2" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -425,11 +414,12 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.version 2.2" />
       <item itemvalue="JUnit.PatientImportTest" />
       <item itemvalue="JUnit.PatientImportTest.shouldImportPatients" />
+      <item itemvalue="Maven.version 2.2" />
     </list>
     <recent_temporary>
       <list>
