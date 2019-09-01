@@ -19,6 +19,16 @@ public abstract class EncounterUtils {
 			Encounter encounter = new Encounter();
 			encounter.setVisit(new Visit(patient, Context.getVisitService().getVisitType(1), new Date()));
 			encounter.setForm(Context.getFormService().getForm(delegate.getEncounters().getFormTypeId()));
+			encounter.setEncounterType(Context.getEncounterService().getEncounterType(
+			    delegate.getEncounters().getEncounterId()));
+			//encounter.setObs(obsSet);
+			encounter.setLocation(location);
+			encounter.setPatient(patient);
+			encounter.setEncounterDatetime(new Date());
+			
+			//TODO: check if encounter is not existing
+			Encounter encounterObj = Context.getEncounterService().saveEncounter(encounter);
+
 			Set<Obs> obsSet = new TreeSet<>();
 			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
 				Obs obs = new Obs();
@@ -34,8 +44,7 @@ public abstract class EncounterUtils {
 						obs.setValueCoded(Context.getConceptService().getConcept(obsValue));
 						break;
 					case "value_datetime" :
-						SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-						Date dateVlue = simpleDateFormat.parse(obsValue);
+						Date dateVlue = dateFormat.parse(obsValue);
 						obs.setValueDatetime(dateVlue);
 						break;
 					case "value_text" :
@@ -47,16 +56,13 @@ public abstract class EncounterUtils {
 				}
 				obs.setConcept(Context.getConceptService().getConcept(_o.getConceptId()));
 				obs.setComment("");
-				obsSet.add(obs);
+				obs.setEncounter(encounterObj);
+				obs.setObsDatetime( new Date());
+				obs.setLocation(location);
+				obs.setPerson(patient);
+				Context.getObsService().saveObs(obs, "");
 			}
-			encounter.setEncounterType(Context.getEncounterService().getEncounterType(delegate.getEncounters().getFormTypeId()));
-			encounter.setObs(obsSet);
-			encounter.setLocation(location);
-			encounter.setPatient(patient);
-			encounter.setEncounterDatetime(new Date());
 
-			//TODO: check if encounter is not existing
-			Context.getEncounterService().saveEncounter(encounter);
 			return encounter;
 		}
 		catch (Exception e) {
