@@ -18,7 +18,6 @@ public abstract class EncounterUtils {
 			ArrayList<Encounter> encounters = new ArrayList<Encounter>();
 			Encounter encounter = new Encounter();
 			encounter.setVisit(new Visit(patient, Context.getVisitService().getVisitType(1), new Date()));
-			//encounter.setEncounterDatetime(dateFormat.parse(delegate.getEncounters().getEncounterDate()));
 			encounter.setForm(Context.getFormService().getForm(delegate.getEncounters().getFormTypeId()));
 			Set<Obs> obsSet = new TreeSet<>();
 			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
