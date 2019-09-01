@@ -8,7 +8,7 @@ public class Obs extends BaseOpenmrsMetadata {
 	
 	String valueTypeId;
 	
-	Integer value;
+	String value;
 	
 	public Integer getConceptId() {
 		return conceptId;
@@ -26,11 +26,11 @@ public class Obs extends BaseOpenmrsMetadata {
 		this.valueTypeId = valueTypeId;
 	}
 	
-	public Integer getValue() {
+	public String getValue() {
 		return value;
 	}
 	
-	public void setValue(Integer value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 	
