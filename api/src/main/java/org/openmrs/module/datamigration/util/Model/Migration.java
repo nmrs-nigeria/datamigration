@@ -8,25 +8,13 @@ import java.util.Set;
 
 public class Migration extends BaseOpenmrsMetadata {
 	
-	private String preferred;
-	
 	private String prefix;
-	
-	private String hospitalNo;
-	
-	public String getHospitalNo() {
-		return hospitalNo;
-	}
-	
-	public void setHospitalNo(String hospitalNo) {
-		this.hospitalNo = hospitalNo;
-	}
 	
 	private String givenName;
 	
 	private String middleName;
 	
-	private String lastName;
+	private String surname;
 	
 	private String creator;
 	
@@ -94,14 +82,6 @@ public class Migration extends BaseOpenmrsMetadata {
 		this.gender = gender;
 	}
 	
-	public String getPreferred() {
-		return preferred;
-	}
-	
-	public void setPreferred(String preferred) {
-		this.preferred = preferred;
-	}
-	
 	public String getPrefix() {
 		return prefix;
 	}
@@ -125,13 +105,13 @@ public class Migration extends BaseOpenmrsMetadata {
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
-	
-	public String getLastName() {
-		return lastName;
+
+	public String getSurname() {
+		return surname;
 	}
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 	
 	public String getBirthDate() {

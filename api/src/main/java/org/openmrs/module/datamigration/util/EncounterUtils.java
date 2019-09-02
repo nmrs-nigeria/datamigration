@@ -4,6 +4,7 @@ import org.openmrs.*;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.datamigration.util.Model.Migration;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,18 +17,37 @@ public abstract class EncounterUtils {
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			ArrayList<Encounter> encounters = new ArrayList<Encounter>();
+
+			//check for the visit id before inserting a new one
+			Date encounterDate = dateFormat.parse(delegate.getEncounters().getEncounterDate());
+			Visit visit = Context.getVisitService().getVisitsByPatient(patient).stream()
+					.filter(m -> m.getStartDatetime() != null && m.getStartDatetime()
+							.equals(encounterDate))
+					.findFirst().orElse(null);
+
+			if(visit == null)
+			{
+				//create the visit
+				visit = new Visit(patient, Context.getVisitService().getVisitType(1), encounterDate);
+				visit.setStopDatetime(encounterDate);
+				visit.setLocation(location);
+			}
 			Encounter encounter = new Encounter();
-			encounter.setVisit(new Visit(patient, Context.getVisitService().getVisitType(1), new Date()));
-			encounter.setForm(Context.getFormService().getForm(delegate.getEncounters().getFormTypeId()));
-			encounter.setEncounterType(Context.getEncounterService().getEncounterType(
-			    delegate.getEncounters().getEncounterId()));
-			//encounter.setObs(obsSet);
-			encounter.setLocation(location);
-			encounter.setPatient(patient);
-			encounter.setEncounterDatetime(new Date());
-			
 			//TODO: check if encounter is not existing
-			Encounter encounterObj = Context.getEncounterService().saveEncounter(encounter);
+			//false is to exclude voided encounters.
+			encounter = Context.getEncounterService().getEncountersByVisit(visit, false).stream()
+					.filter(m -> m.getVisit().getStartDatetime().equals(encounterDate)).findFirst().orElse(null);
+			if(encounter == null){
+				encounter.setVisit(visit);
+				encounter.setForm(Context.getFormService().getForm(delegate.getEncounters().getFormTypeId()));
+				encounter.setEncounterType(Context.getEncounterService().getEncounterType(
+						delegate.getEncounters().getEncounterId()));
+				encounter.setLocation(location);
+				encounter.setPatient(patient);
+				encounter.setEncounterDatetime(encounterDate);
+
+				encounter = Context.getEncounterService().saveEncounter(encounter);
+			}
 
 			Set<Obs> obsSet = new TreeSet<>();
 			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
@@ -56,8 +76,8 @@ public abstract class EncounterUtils {
 				}
 				obs.setConcept(Context.getConceptService().getConcept(_o.getConceptId()));
 				obs.setComment("");
-				obs.setEncounter(encounterObj);
-				obs.setObsDatetime( new Date());
+				obs.setEncounter(encounter);
+				obs.setObsDatetime(encounterDate);
 				obs.setLocation(location);
 				obs.setPerson(patient);
 				Context.getObsService().saveObs(obs, "");

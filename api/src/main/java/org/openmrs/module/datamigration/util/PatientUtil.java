@@ -36,7 +36,7 @@ public abstract class PatientUtil {
 			//handle patient
 			patient.setIdentifiers(patientIdentifiers);
 			
-			patient.addName(new PersonName(delegate.getGivenName(), delegate.getMiddleName(), delegate.getFamilyName()));
+			patient.addName(new PersonName(delegate.getGivenName(), delegate.getMiddleName(), delegate.getSurname()));
 			patient.setBirthdate(dateFormat.parse(delegate.getBirthDate()));
 			patient.setGender(delegate.getGender());
 			patient.setDead(Boolean.parseBoolean(delegate.getDead()));
@@ -61,7 +61,8 @@ public abstract class PatientUtil {
 			//check if the patient exists
 			Patient p = Context.getPatientService().getAllPatients().stream()
 					.filter(x-> x.getPatientIdentifier(4) != null &&
-							x.getPatientIdentifier(4).getIdentifier().equals(delegate.getHospitalNo()))
+							x.getPatientIdentifier(4).getIdentifier().equals(patientIdentifiers.stream()
+									.filter(m -> m.getIdentifierType().getPatientIdentifierTypeId().equals(4))))
 					.findFirst().orElse(null);
 
 			if(p != null)

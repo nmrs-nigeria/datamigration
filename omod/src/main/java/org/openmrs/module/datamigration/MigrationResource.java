@@ -46,12 +46,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("preferred");
-			description.addProperty("hospitalNo");
 			description.addProperty("prefix");
 			description.addProperty("givenName");
 			description.addProperty("middleName");
-			description.addProperty("familyName");
+			description.addProperty("surname");
 			description.addProperty("lastName");
 			description.addProperty("birthDate");
 			description.addProperty("gender");
@@ -112,12 +110,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
 		
-		description.addProperty("preferred");
-		description.addProperty("hospitalNo");
 		description.addProperty("prefix");
 		description.addProperty("givenName");
 		description.addProperty("middleName");
-		description.addProperty("familyName");
+		description.addProperty("surname");
 		description.addProperty("lastName");
 		description.addProperty("birthDate");
 		description.addProperty("gender");
