@@ -13,51 +13,43 @@ public class Identifier extends BaseOpenmrsMetadata {
 	private String identifier;
 	
 	@JsonProperty("identifierType")
-	private String identifierType;
+	private Integer identifierType;
 	
 	@JsonProperty("locationId")
-	private String locationId;
+	private Integer locationId;
 	
 	@JsonProperty("preferred")
-	private String preferred;
+	private Boolean preferred;
 	
-	@JsonProperty("identifier")
 	public String getIdentifier() {
 		return identifier;
 	}
 	
-	@JsonProperty("identifier")
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
 	}
 	
-	@JsonProperty("identifierType")
-	public String getIdentifierType() {
+	public Integer getIdentifierType() {
 		return identifierType;
 	}
 	
-	@JsonProperty("identifierType")
-	public void setIdentifierType(String identifierType) {
+	public void setIdentifierType(Integer identifierType) {
 		this.identifierType = identifierType;
 	}
 	
-	@JsonProperty("locationId")
-	public String getLocationId() {
+	public Integer getLocationId() {
 		return locationId;
 	}
 	
-	@JsonProperty("locationId")
-	public void setLocationId(String locationId) {
+	public void setLocationId(Integer locationId) {
 		this.locationId = locationId;
 	}
 	
-	@JsonProperty("preferred")
-	public String getPreferred() {
+	public Boolean getPreferred() {
 		return preferred;
 	}
 	
-	@JsonProperty("preferred")
-	public void setPreferred(String preferred) {
+	public void setPreferred(Boolean preferred) {
 		this.preferred = preferred;
 	}
 	

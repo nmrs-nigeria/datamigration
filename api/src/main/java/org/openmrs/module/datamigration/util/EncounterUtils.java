@@ -73,7 +73,7 @@ public abstract class EncounterUtils {
 				encounter = Context.getEncounterService().saveEncounter(encounter);
 			}
 
-			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
+			/*for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
 				Obs obs = new Obs();
 
 				String obsValueType = _o.getValueTypeId();
@@ -104,7 +104,7 @@ public abstract class EncounterUtils {
 				obs.setLocation(location);
 				obs.setPerson(patient);
 				Context.getObsService().saveObs(obs, "");
-			}
+			}*/
 
 			return encounter;
 		}

@@ -2,19 +2,14 @@ package org.openmrs.module.datamigration.util.Model;
 
 import org.openmrs.BaseOpenmrsMetadata;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Obs extends BaseOpenmrsMetadata {
+public class ObsChildren extends BaseOpenmrsMetadata {
 	
 	Integer conceptId;
 	
 	String valueTypeId;
-	
-	String value;
-
-	Boolean isGroup;
-
-	Set<ObsChildren> ObsChildren;
 
 	public Integer getConceptId() {
 		return conceptId;
@@ -40,21 +35,7 @@ public class Obs extends BaseOpenmrsMetadata {
 		this.value = value;
 	}
 
-	public Boolean getGroup() {
-		return isGroup;
-	}
-
-	public void setGroup(Boolean group) {
-		isGroup = group;
-	}
-
-	public Set<org.openmrs.module.datamigration.util.Model.ObsChildren> getObsChildren() {
-		return ObsChildren;
-	}
-
-	public void setObsChildren(Set<org.openmrs.module.datamigration.util.Model.ObsChildren> obsChildren) {
-		ObsChildren = obsChildren;
-	}
+	String value;
 
 	@Override
 	public Integer getId() {

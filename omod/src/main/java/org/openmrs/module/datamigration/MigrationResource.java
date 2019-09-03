@@ -57,6 +57,7 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 			description.addProperty("dead");
 			description.addProperty("deathDate");
 			description.addProperty("causeOfDeath");
+			description.addProperty("phone");
 			description.addProperty("facility", Representation.REF);
 			description.addProperty("address", Representation.REF);
 			description.addProperty("identifiers", Representation.REF);
@@ -123,6 +124,7 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		description.addProperty("causeOfDeath");
 		description.addProperty("facility");
 		description.addProperty("address");
+		description.addProperty("phone");
 		description.addProperty("identifiers", Representation.REF);
 		description.addProperty("encounters", Representation.REF);
 		return description;

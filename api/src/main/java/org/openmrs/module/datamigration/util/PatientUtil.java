@@ -30,10 +30,10 @@ public abstract class PatientUtil {
 				PatientIdentifier patientIdentifier = new PatientIdentifier();
 				patientIdentifier.setIdentifier(_id.getIdentifier());
 				patientIdentifier.setLocation(location);
-				patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(Integer.parseInt(_id.getIdentifierType())));
-				patientIdentifier.setPreferred(Boolean.parseBoolean(_id.getPreferred()));
+				patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(_id.getIdentifierType()));
+				patientIdentifier.setPreferred(_id.getPreferred());
 				patientIdentifiers.add(patientIdentifier);
-				if(_id.getIdentifierType().equals("4"))
+				if(_id.getIdentifierType() == 4)
 					pepfarId = _id.getIdentifier();
 			}
 			//handle patient

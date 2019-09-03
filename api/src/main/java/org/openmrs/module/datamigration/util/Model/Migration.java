@@ -40,7 +40,17 @@ public class Migration extends BaseOpenmrsMetadata {
 	
 	private Address address;
 
+	private String phone;
+
 	Set<Identifier> identifiers = new LinkedHashSet<>();
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public Encounter getEncounters() {
 		return encounters;
