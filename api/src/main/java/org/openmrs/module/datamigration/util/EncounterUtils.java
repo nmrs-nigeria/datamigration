@@ -44,7 +44,7 @@ public abstract class EncounterUtils {
 					encounter.setVisit(visit);
 					encounter.setForm(Context.getFormService().getForm(e.getFormTypeId()));
 					encounter.setEncounterType(Context.getEncounterService().getEncounterType(
-							e.getEncounterId()));
+							e.getEncounterTypeId()));
 					encounter.setLocation(location);
 					encounter.setPatient(patient);
 					encounter.setEncounterDatetime(encounterDate);

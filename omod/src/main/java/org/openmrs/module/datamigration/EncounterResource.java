@@ -46,7 +46,7 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("encounterId");
+			description.addProperty("encounterTypeId");
 			description.addProperty("encounterLocationId");
 			description.addProperty("formTypeId");
 			description.addProperty("encounterDate");
@@ -84,7 +84,7 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		description.addProperty("encounterId");
+		description.addProperty("encounterTypeId");
 		description.addProperty("encounterLocationId");
 		description.addProperty("encounterDate");
 		description.addProperty("formTypeId");

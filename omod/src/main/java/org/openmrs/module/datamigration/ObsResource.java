@@ -48,7 +48,7 @@ public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
 			description.addProperty("conceptId");
 			description.addProperty("valueTypeId");
 			description.addProperty("value");
-			description.addProperty("isGroup");
+			description.addProperty("aGroup");
 			description.addProperty("obsChildren");
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
@@ -57,7 +57,7 @@ public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
 			description.addProperty("conceptId");
 			description.addProperty("valueTypeId");
 			description.addProperty("value");
-			description.addProperty("isGroup");
+			description.addProperty("aGroup");
 			description.addProperty("obsChildren");
 			description.addSelfLink();
 			if (rep instanceof DefaultRepresentation) {
@@ -90,7 +90,7 @@ public class ObsResource extends MetadataDelegatingCrudResource<Obs> {
 		description.addProperty("conceptId");
 		description.addProperty("valueTypeId");
 		description.addProperty("value");
-		description.addProperty("isGroup");
+		description.addProperty("aGroup");
 		description.addProperty("obsChildren");
 		return description;
 	}

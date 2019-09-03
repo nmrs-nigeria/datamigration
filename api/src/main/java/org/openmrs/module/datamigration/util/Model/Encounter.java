@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Encounter extends BaseOpenmrsMetadata {
 	
-	Integer encounterId;
+	Integer encounterTypeId;
 	
 	Integer encounterLocationId;
 	
@@ -33,15 +33,14 @@ public class Encounter extends BaseOpenmrsMetadata {
 	public void setProvider(Provider provider) {
 		this.provider = provider;
 	}
-	
-	public Integer getEncounterId() {
-		return encounterId;
-	}
-	
-	public void setEncounterId(Integer encounterId) {
-		this.encounterId = encounterId;
+
+	public Integer getEncounterTypeId() {
+		return encounterTypeId;
 	}
 
+	public void setEncounterTypeId(Integer encounterTypeId) {
+		this.encounterTypeId = encounterTypeId;
+	}
 
 	public Integer getEncounterLocationId() {
 		
