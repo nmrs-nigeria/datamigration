@@ -27,122 +27,118 @@ import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOp
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
 @Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE, supportedClass = Migration.class, supportedOpenmrsVersions = {
-        "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
+        "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*"})
 public class MigrationResource extends MetadataDelegatingCrudResource<Migration> {
-	
-	@Override
-	protected NeedsPaging<MigrationResource> doGetAll(RequestContext context) {
-		return null;
-	}
-	
-	@Override
-	protected PageableResult doSearch(RequestContext context) {
-		return null;
-	}
-	
-	@Override
-	public DelegatingResourceDescription getRepresentationDescription(Representation rep) {
-		DelegatingResourceDescription description = null;
-		if (rep instanceof RefRepresentation) {
-			description = new DelegatingResourceDescription();
-			description.addProperty("uuid");
-			description.addProperty("prefix");
-			description.addProperty("givenName");
-			description.addProperty("middleName");
-			description.addProperty("surname");
-			description.addProperty("lastName");
-			description.addProperty("birthDate");
-			description.addProperty("gender");
-			description.addProperty("birthdateEstimated");
-			description.addProperty("dead");
-			description.addProperty("deathDate");
-			description.addProperty("causeOfDeath");
-			description.addProperty("phone");
-			description.addProperty("facility", Representation.REF);
-			description.addProperty("address", Representation.REF);
-			description.addProperty("identifiers", Representation.REF);
-			description.addProperty("encounters", Representation.REF);
-			
-			description.addSelfLink();
-		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
-			description = new DelegatingResourceDescription();
-			description.addProperty("uuid");
-			description.addSelfLink();
-			if (rep instanceof DefaultRepresentation) {
-				description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
-			}
-		}
-		return description;
-	}
-	
-	@PropertyGetter("display")
-	public String getDisplay(Migration logentry) {
-		//return null;
-		String ret = logentry.getGivenName() + " inserted";
-		return ret;
-	}
-	
-	@Override
-	public Migration newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Migration();
-	}
-	
-	@Override
-	public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
-		
-		try {
-			FactoryUtils factoryUtils = new FactoryUtils();
-			factoryUtils.PatientUtils(delegate);
-		}
-		catch (Exception ex) {
-			try {
-				throw ex.getCause();
-			}
-			catch (Throwable throwable) {
-				throwable.printStackTrace();
-			}
-		}
-		//System.out.println(delegate.getJson());
-		
-		return delegate;
-	}
-	
-	@Override
-	public DelegatingResourceDescription getCreatableProperties() {
-		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		
-		description.addProperty("prefix");
-		description.addProperty("givenName");
-		description.addProperty("middleName");
-		description.addProperty("surname");
-		description.addProperty("lastName");
-		description.addProperty("birthDate");
-		description.addProperty("gender");
-		description.addProperty("birthdateEstimated");
-		description.addProperty("dead");
-		description.addProperty("deathDate");
-		description.addProperty("causeOfDeath");
-		description.addProperty("facility");
-		description.addProperty("address");
-		description.addProperty("phone");
-		description.addProperty("identifiers", Representation.REF);
-		description.addProperty("encounters", Representation.REF);
-		return description;
-	}
-	
-	@Override
-	public Migration getByUniqueId(String uniqueId) {
-		return null;
-	}
-	
-	@Override
-	public void purge(Migration delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
-	}
-	
-	@Override
-	public Object update(String uuid, SimpleObject updateBody, RequestContext context) throws ResponseException {
-		throw new ResourceDoesNotSupportOperationException();
-	}
+
+    @Override
+    protected NeedsPaging<MigrationResource> doGetAll(RequestContext context) {
+        return null;
+    }
+
+    @Override
+    protected PageableResult doSearch(RequestContext context) {
+        return null;
+    }
+
+    @Override
+    public DelegatingResourceDescription getRepresentationDescription(Representation rep) {
+        DelegatingResourceDescription description = null;
+        if (rep instanceof RefRepresentation) {
+            description = new DelegatingResourceDescription();
+            description.addProperty("uuid");
+            description.addProperty("prefix");
+            description.addProperty("givenName");
+            description.addProperty("middleName");
+            description.addProperty("surname");
+            description.addProperty("lastName");
+            description.addProperty("birthDate");
+            description.addProperty("gender");
+            description.addProperty("birthdateEstimated");
+            description.addProperty("dead");
+            description.addProperty("deathDate");
+            description.addProperty("causeOfDeath");
+            description.addProperty("phone");
+            description.addProperty("facility", Representation.REF);
+            description.addProperty("address", Representation.REF);
+            description.addProperty("identifiers", Representation.REF);
+            description.addProperty("encounters", Representation.REF);
+
+            description.addSelfLink();
+        } else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
+            description = new DelegatingResourceDescription();
+            description.addProperty("uuid");
+            description.addSelfLink();
+            if (rep instanceof DefaultRepresentation) {
+                description.addLink("full", ".?v=" + RestConstants.REPRESENTATION_FULL);
+            }
+        }
+        return description;
+    }
+
+    @PropertyGetter("display")
+    public String getDisplay(Migration logentry) {
+        //return null;
+        String ret = logentry.getGivenName() + " inserted";
+        return ret;
+    }
+
+    @Override
+    public Migration newDelegate() throws ResourceDoesNotSupportOperationException {
+        return new Migration();
+    }
+
+    @Override
+    public Migration save(Migration delegate) throws ResourceDoesNotSupportOperationException {
+
+        try {
+            FactoryUtils factoryUtils = new FactoryUtils();
+            factoryUtils.PatientUtils(delegate);
+        } catch (Exception ex) {
+            try {
+                throw ex.getCause();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        }
+        return delegate;
+    }
+
+    @Override
+    public DelegatingResourceDescription getCreatableProperties() {
+        DelegatingResourceDescription description = new DelegatingResourceDescription();
+
+        description.addProperty("prefix");
+        description.addProperty("givenName");
+        description.addProperty("middleName");
+        description.addProperty("surname");
+        description.addProperty("lastName");
+        description.addProperty("birthDate");
+        description.addProperty("gender");
+        description.addProperty("birthdateEstimated");
+        description.addProperty("dead");
+        description.addProperty("deathDate");
+        description.addProperty("causeOfDeath");
+        description.addProperty("facility");
+        description.addProperty("address");
+        description.addProperty("phone");
+        description.addProperty("identifiers", Representation.REF);
+        description.addProperty("encounters", Representation.REF);
+        return description;
+    }
+
+    @Override
+    public Migration getByUniqueId(String uniqueId) {
+        return null;
+    }
+
+    @Override
+    public void purge(Migration delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+    }
+
+    @Override
+    public Object update(String uuid, SimpleObject updateBody, RequestContext context) throws ResponseException {
+        throw new ResourceDoesNotSupportOperationException();
+    }
 	
 	/*@Override
 	public Model getCREATEModel(Representation rep){

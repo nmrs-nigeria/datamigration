@@ -14,12 +14,10 @@ public class OptionsUtils {
 			result.setUsername(props.getProperty("connection.username"));
 			result.setPassword(props.getProperty("connection.password"));
 			result.setUrl(props.getProperty("connection.url"));
-			
 		}
 		catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
 		return result;
 		
 	}
