@@ -13,10 +13,18 @@ public class Encounter extends BaseOpenmrsMetadata {
 	String encounterDate;
 	
 	Integer formTypeId;
-	
-	Set<ObsChildren> obs = new LinkedHashSet<>();
+
+	Set<Obs> obs = new LinkedHashSet<>();
 
 	private Provider provider;
+
+	public Set<Obs> getObs() {
+		return obs;
+	}
+
+	public void setObs(Set<Obs> obs) {
+		this.obs = obs;
+	}
 
 	public Provider getProvider() {
 		return provider;
@@ -34,13 +42,6 @@ public class Encounter extends BaseOpenmrsMetadata {
 		this.encounterId = encounterId;
 	}
 
-	public Set<ObsChildren> getObs() {
-		return obs;
-	}
-
-	public void setObs(Set<ObsChildren> obs) {
-		this.obs = obs;
-	}
 
 	public Integer getEncounterLocationId() {
 		
