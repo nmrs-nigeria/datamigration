@@ -1,4 +1,3 @@
-org/openmrs/module/datamigration/ObsGroupResource.class
 org/openmrs/module/datamigration/EncounterResource.class
 org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.class
 org/openmrs/module/datamigration/NigeriaEmrRestController.class
@@ -11,4 +10,5 @@ org/openmrs/module/datamigration/IdentifiersResource.class
 org/openmrs/module/datamigration/web/controller/DataMigrationController.class
 org/openmrs/module/datamigration/IdentifierResource.class
 org/openmrs/module/datamigration/FacilityResource.class
+org/openmrs/module/datamigration/ObsChildrenResource.class
 org/openmrs/module/datamigration/AddressResource.class

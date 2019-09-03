@@ -36,7 +36,7 @@ public class Migration extends BaseOpenmrsMetadata {
 	
 	private Facility facility;
 
-	private Encounter encounters;
+	Set<Encounter> encounters = new LinkedHashSet<>();
 	
 	private Address address;
 
@@ -52,11 +52,11 @@ public class Migration extends BaseOpenmrsMetadata {
 		this.phone = phone;
 	}
 
-	public Encounter getEncounters() {
+	public Set<Encounter> getEncounters() {
 		return encounters;
 	}
 
-	public void setEncounters(Encounter encounters) {
+	public void setEncounters(Set<Encounter> encounters) {
 		this.encounters = encounters;
 	}
 

@@ -2,34 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75bcb9b2-bcf6-461d-b04a-cd1495840e56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/ObsChildren.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsChildrenResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Encounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Encounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Obs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Obs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/ObsChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/ObsChildren.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/EncounterUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/EncounterUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Encounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Encounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Identifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Identifier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Migration.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Migration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/PatientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/PatientUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Obs.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/Obs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/FacilityResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/MigrationResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ObsResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ObsResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.omod" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.omod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/FacilityResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/MigrationResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ObsResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ObsResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
@@ -67,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+            <state relative-caret-position="68">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -76,12 +69,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+            <state relative-caret-position="114">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#575#586#0" expanded="true" />
+                <element signature="e#669#680#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#949#950#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncounterResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="53" column="40" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifiersResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -95,35 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="854">
-              <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsChildrenResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/Utility/OptionsUtils.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/DbManager/DbConnection.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/Utility/FactoryUtils.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/api/dao/DbConnection.java" />
@@ -200,16 +202,13 @@
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Identifiers.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifierResource.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifiersResource.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Provider.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ProviderResource.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/FacilityResource.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncounterResource.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Encounter.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Identifier.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/ObsGroup.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsGroupResource.java" />
@@ -217,6 +216,10 @@
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Obs.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsChildrenResource.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java" />
+        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncountersResource.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" />
       </list>
     </option>
   </component>
@@ -309,6 +312,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="datamigration" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datamigration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datamigration" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="datamigration" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="datamigration" type="b2602c69:ProjectViewProjectNode" />
@@ -708,7 +722,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567495298343</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Provider added">
+      <created>1567516452660</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1567516452660</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -757,9 +778,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="678" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19848485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19848485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -769,7 +789,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.3752277" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49545455" visible="true" weight="0.1985428" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49545455" weight="0.52641165" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -778,7 +798,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50454545" side_tool="true" weight="0.3132969" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49848485" weight="0.32422587" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.49848485" visible="true" weight="0.32422587" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32786885" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -941,15 +961,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java</url>
-          <line>50</line>
+          <line>117</line>
           <properties />
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifierResource.java</url>
@@ -1016,14 +1030,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/NmrsJson.java" />
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Demographics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-754">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openmrs/api/openmrs-api/1.11.6/openmrs-api-1.11.6.jar!/org/openmrs/api/PatientService.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -1063,13 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifiersResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1312,20 +1311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Identifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1348,13 +1333,6 @@
             <element signature="e#1130#1131#0" expanded="true" />
             <element signature="e#1163#1164#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncounterResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1431,41 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#575#586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="854">
@@ -1478,8 +1421,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/ObsChildrenResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="240">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncounterResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="53" column="40" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/EncountersResource.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/IdentifiersResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openmrs/api/openmrs-api/1.11.6/openmrs-api-1.11.6.jar!/org/openmrs/Encounter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/EncounterUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#669#680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
