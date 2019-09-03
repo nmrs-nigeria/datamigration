@@ -8,8 +8,7 @@
  */
 package org.openmrs.module.datamigration;
 
-import org.openmrs.module.datamigration.util.Model.Encounter;
-import org.openmrs.module.datamigration.util.Model.Identifiers;
+import org.openmrs.module.datamigration.util.Model.Provider;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -26,12 +25,12 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/encounters", supportedClass = Encounter.class, supportedOpenmrsVersions = {
+@Resource(name = RestConstants.VERSION_1 + NigeriaEmrRestController.NG_NAMESPACE + "/provider", supportedClass = Provider.class, supportedOpenmrsVersions = {
         "1.9.*", "1.10.*", "1.11.*", "1.12.*", "2.0.*", "2.1.*", "2.2.*", "2.3.*" })
-public class EncounterResource extends MetadataDelegatingCrudResource<Encounter> {
+public class ProviderResource extends MetadataDelegatingCrudResource<Provider> {
 	
 	@Override
-	protected NeedsPaging<EncounterResource> doGetAll(RequestContext context) {
+	protected NeedsPaging<ProviderResource> doGetAll(RequestContext context) {
 		return null;
 	}
 	
@@ -46,12 +45,10 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 		if (rep instanceof RefRepresentation) {
 			description = new DelegatingResourceDescription();
 			description.addProperty("uuid");
-			description.addProperty("encounterId");
-			description.addProperty("encounterLocationId");
-			description.addProperty("formTypeId");
-			description.addProperty("encounterDate");
-			description.addProperty("provider");
-			description.addProperty("obs");
+			description.addProperty("givenName");
+			description.addProperty("middleName");
+			description.addProperty("surname");
+			
 			description.addSelfLink();
 		} else if (rep instanceof DefaultRepresentation || rep instanceof FullRepresentation) {
 			description = new DelegatingResourceDescription();
@@ -65,18 +62,17 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(Encounter logentry) {
+	public String getDisplay(Provider logentry) {
 		return null;
 	}
 	
 	@Override
-	public Encounter newDelegate() throws ResourceDoesNotSupportOperationException {
-		return new Encounter();
+	public Provider newDelegate() throws ResourceDoesNotSupportOperationException {
+		return new Provider();
 	}
 	
 	@Override
-	public Encounter save(Encounter delegate) throws ResourceDoesNotSupportOperationException {
-		Encounter var = delegate;
+	public Provider save(Provider delegate) throws ResourceDoesNotSupportOperationException {
 		
 		return null;
 	}
@@ -84,23 +80,19 @@ public class EncounterResource extends MetadataDelegatingCrudResource<Encounter>
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
-		description.addProperty("encounterId");
-		description.addProperty("encounterLocationId");
-		description.addProperty("encounterDate");
-		description.addProperty("formTypeId");
-		description.addProperty("encounterDate");
-		description.addProperty("provider");
-		description.addProperty("obs");
+		description.addProperty("givenName");
+		description.addProperty("middleName");
+		description.addProperty("surname");
 		return description;
 	}
 	
 	@Override
-	public Encounter getByUniqueId(String uniqueId) {
+	public Provider getByUniqueId(String uniqueId) {
 		return null;
 	}
 	
 	@Override
-	public void purge(Encounter delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
+	public void purge(Provider delegate, RequestContext context) throws ResourceDoesNotSupportOperationException {
 	}
 	
 	@Override

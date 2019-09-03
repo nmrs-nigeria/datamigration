@@ -21,4 +21,5 @@ org/openmrs/module/datamigration/AnyThing.class
 org/openmrs/module/datamigration/util/Model/Migration.class
 org/openmrs/module/datamigration/util/Model/Identifier.class
 org/openmrs/module/datamigration/util/Model/Address.class
+org/openmrs/module/datamigration/util/Model/Provider.class
 org/openmrs/module/datamigration/util/OptionsUtils.class

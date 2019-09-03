@@ -65,7 +65,7 @@ public class FacilityResource extends MetadataDelegatingCrudResource<Facility> {
 	}
 	
 	@PropertyGetter("display")
-	public String getDisplay(AnyThing logentry) {
+	public String getDisplay(Facility logentry) {
 		return null;
 	}
 	

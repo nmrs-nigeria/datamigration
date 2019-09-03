@@ -23,6 +23,7 @@ public abstract class PatientUtil {
 			
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			Patient patient = new Patient();
+			String pepfarId = "";
 			//handle patient identifiers
 			Set<PatientIdentifier> patientIdentifiers = new TreeSet<PatientIdentifier>();
 			for (Identifier _id: delegate.getIdentifiers()) {
@@ -32,6 +33,8 @@ public abstract class PatientUtil {
 				patientIdentifier.setIdentifierType(Context.getPatientService().getPatientIdentifierType(Integer.parseInt(_id.getIdentifierType())));
 				patientIdentifier.setPreferred(Boolean.parseBoolean(_id.getPreferred()));
 				patientIdentifiers.add(patientIdentifier);
+				if(_id.getIdentifierType().equals("4"))
+					pepfarId = _id.getIdentifier();
 			}
 			//handle patient
 			patient.setIdentifiers(patientIdentifiers);
@@ -59,10 +62,10 @@ public abstract class PatientUtil {
 			patient.setAddresses(addresses);
 			
 			//check if the patient exists
+			String finalPepfarId = pepfarId;
 			Patient p = Context.getPatientService().getAllPatients().stream()
 					.filter(x-> x.getPatientIdentifier(4) != null &&
-							x.getPatientIdentifier(4).getIdentifier().equals(patientIdentifiers.stream()
-									.filter(m -> m.getIdentifierType().getPatientIdentifierTypeId().equals(4))))
+							x.getPatientIdentifier(4).getIdentifier().equals(finalPepfarId))
 					.findFirst().orElse(null);
 
 			if(p != null)

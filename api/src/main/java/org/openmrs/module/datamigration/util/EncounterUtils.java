@@ -4,7 +4,6 @@ import org.openmrs.*;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.datamigration.util.Model.Migration;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,13 +30,15 @@ public abstract class EncounterUtils {
 				visit = new Visit(patient, Context.getVisitService().getVisitType(1), encounterDate);
 				visit.setStopDatetime(encounterDate);
 				visit.setLocation(location);
+				visit.setPatient(patient);
 			}
-			Encounter encounter = new Encounter();
-			//TODO: check if encounter is not existing
+			visit = Context.getVisitService().saveVisit(visit);
+			Encounter encounter;
 			//false is to exclude voided encounters.
 			encounter = Context.getEncounterService().getEncountersByVisit(visit, false).stream()
 					.filter(m -> m.getVisit().getStartDatetime().equals(encounterDate)).findFirst().orElse(null);
 			if(encounter == null){
+				encounter = new Encounter();
 				encounter.setVisit(visit);
 				encounter.setForm(Context.getFormService().getForm(delegate.getEncounters().getFormTypeId()));
 				encounter.setEncounterType(Context.getEncounterService().getEncounterType(
@@ -46,10 +47,32 @@ public abstract class EncounterUtils {
 				encounter.setPatient(patient);
 				encounter.setEncounterDatetime(encounterDate);
 
+				String familyName, givenName, middleName;
+				givenName = delegate.getEncounters().getProvider().getGivenName();
+				middleName = delegate.getEncounters().getProvider().getMiddleName();
+				familyName = delegate.getEncounters().getProvider().getSurname();
+				Provider provider;
+				//check if the provider is already in the db;
+				provider = Context.getProviderService().getAllProviders().stream().filter(m -> m.getPerson().getFamilyName().equals(familyName)
+						&& m.getPerson().getGivenName().equals(givenName)).findFirst().orElse(null);
+				if(provider == null){
+					Person person = new Person();
+					Set<PersonName> personNames = new TreeSet<>();
+					personNames.add(new PersonName(givenName, middleName, familyName));
+					person.setNames(personNames);
+
+					Context.getPersonService().savePerson(person);
+					provider = new Provider();
+					provider.setPerson(person);
+
+					Context.getProviderService().saveProvider(provider);
+				}
+
+				encounter.setProvider(Context.getEncounterService().getEncounterRole(2), provider);
+
 				encounter = Context.getEncounterService().saveEncounter(encounter);
 			}
 
-			Set<Obs> obsSet = new TreeSet<>();
 			for (org.openmrs.module.datamigration.util.Model.Obs _o: delegate.getEncounters().getObs()) {
 				Obs obs = new Obs();
 

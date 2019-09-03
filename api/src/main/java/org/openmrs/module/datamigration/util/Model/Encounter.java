@@ -15,6 +15,16 @@ public class Encounter extends BaseOpenmrsMetadata {
 	Integer formTypeId;
 	
 	Set<Obs> obs = new LinkedHashSet<>();
+
+	private Provider provider;
+
+	public Provider getProvider() {
+		return provider;
+	}
+
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
 	
 	public Integer getEncounterId() {
 		return encounterId;
