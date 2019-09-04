@@ -2,6 +2,7 @@
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Address.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Provider.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/Item.java
+/home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/ObsUtil.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Encounter.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Location.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/api/impl/DataMigrationServiceImpl.java
@@ -14,6 +15,7 @@
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/api/dao/DbConnection.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/DataMigrationConfig.java
+/home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/ObsChildrenUtil.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/api/DataMigrationService.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/DataMigrationActivator.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/AnyThing.java

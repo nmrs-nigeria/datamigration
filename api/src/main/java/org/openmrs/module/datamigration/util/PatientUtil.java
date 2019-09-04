@@ -46,8 +46,10 @@ public abstract class PatientUtil {
 			patient.setDeathDate(delegate.getDeathDate() != null ? dateFormat.parse(delegate.getDeathDate()) : null);
 			//patient.setCauseOfDeath(delegate.getCauseOfDeath());
 
+
 			Set<PersonAddress> addresses = new TreeSet<>();
 			PersonAddress address = new PersonAddress();
+
 			address.setCountry(delegate.getAddress().getCountry());
 			address.setCityVillage(delegate.getAddress().getCityVillage());
 			address.setAddress1(delegate.getAddress().getAddress1());

@@ -1,6 +1,7 @@
 org/openmrs/module/datamigration/util/LocationUtil.class
 org/openmrs/module/datamigration/util/Model/Obs.class
 org/openmrs/module/datamigration/util/Model/Identifiers.class
+org/openmrs/module/datamigration/util/ObsChildrenUtil.class
 org/openmrs/module/datamigration/util/PatientUtil.class
 org/openmrs/module/datamigration/api/dao/DataMigrationDao.class
 org/openmrs/module/datamigration/util/Model/Facility.class
@@ -14,6 +15,7 @@ org/openmrs/module/datamigration/api/dao/DbConnection.class
 org/openmrs/module/datamigration/util/Model/Demographics.class
 org/openmrs/module/datamigration/util/Model/Location.class
 org/openmrs/module/datamigration/util/FactoryUtils.class
+org/openmrs/module/datamigration/util/ObsUtil.class
 org/openmrs/module/datamigration/util/Model/Encounter.class
 org/openmrs/module/datamigration/util/Model/Form.class
 org/openmrs/module/datamigration/api/DataMigrationService.class

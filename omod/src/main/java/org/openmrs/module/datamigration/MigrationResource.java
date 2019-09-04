@@ -102,8 +102,6 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 				throwable.printStackTrace();
 			}
 		}
-		//System.out.println(delegate.getJson());
-		
 		return delegate;
 	}
 	
