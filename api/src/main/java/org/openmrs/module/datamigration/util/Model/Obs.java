@@ -13,14 +13,14 @@ public class Obs extends BaseOpenmrsMetadata {
 	
 	String value;
 
-	Boolean aGroup;
+	Boolean parent;
 
-	public Boolean getaGroup() {
-		return aGroup;
+	public Boolean getParent() {
+		return parent;
 	}
 
-	public void setaGroup(Boolean aGroup) {
-		this.aGroup = aGroup;
+	public void setParent(Boolean parent) {
+		this.parent = parent;
 	}
 
 	Set<ObsChildren> obsChildren = new LinkedHashSet<>();

@@ -9,6 +9,8 @@ import org.openmrs.api.context.Context;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static org.openmrs.module.datamigration.util.Operations.isNullOrEmpty;
+
 public abstract class ObsChildrenUtil {
 	
 	public static Obs InsertObsChild(org.openmrs.module.datamigration.util.Model.ObsChildren _o, Obs _obsChild,
@@ -18,7 +20,7 @@ public abstract class ObsChildrenUtil {
 			Obs obs = new Obs();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			String obsValueType = _o.getValueTypeId();
-			String obsValue = _o.getValue();
+			String obsValue = isNullOrEmpty(_o.getValue()) ? _o.getValue() : null;
 			
 			switch (obsValueType) {
 				case "value_numeric":

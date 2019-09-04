@@ -3,10 +3,12 @@ package org.openmrs.module.datamigration.util;
 import org.openmrs.*;
 import org.openmrs.module.datamigration.util.Model.Migration;
 
+import java.text.ParseException;
+
 public class FactoryUtils {
 	
 	/*This method does the utility connection for the patient*/
-	public void PatientUtils(Migration delegate) {
+	public void PatientUtils(Migration delegate) throws ParseException {
 		
 		try {
 			Location location = LocationUtil.InsertLocation(delegate.getFacility());
@@ -19,13 +21,7 @@ public class FactoryUtils {
 			}
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			try {
-				throw e.getCause();
-			}
-			catch (Throwable throwable) {
-				throwable.printStackTrace();
-			}
+			throw e;
 		}
 		
 	}

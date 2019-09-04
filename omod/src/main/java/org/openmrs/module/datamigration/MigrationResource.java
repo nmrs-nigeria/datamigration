@@ -119,6 +119,7 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		description.addProperty("birthdateEstimated");
 		description.addProperty("dead");
 		description.addProperty("deathDate");
+		description.addProperty("dateCreated");
 		description.addProperty("causeOfDeath");
 		description.addProperty("facility");
 		description.addProperty("address");
