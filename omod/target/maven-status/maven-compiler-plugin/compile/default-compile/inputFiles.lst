@@ -1,14 +1,14 @@
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/ProviderResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/IdentifierResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/ObsResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/NigeriaEmrRestController.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/AddressResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/EncounterResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/AnyThingResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/extension/html/AdminList.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/ObsChildrenResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/FacilityResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/web/controller/DataMigrationController.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/IdentifiersResource.java
-/home/test/IdeaProjects/datamigration/omod/src/main/java/org/openmrs/module/datamigration/MigrationResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\AnyThingResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\FacilityResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\MigrationResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\EncounterResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\extension\html\AdminList.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\IdentifierResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\ObsChildrenResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\IdentifiersResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\web\controller\DataMigrationController.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\NigeriaEmrRestController.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\ProviderResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\ObsResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\AddressResource.java
+C:\My Apps\openmrstuffs\datamigration\omod\src\main\java\org\openmrs\module\datamigration\fragment\controller\UsersFragmentController.java

@@ -1,9 +1,6 @@
 package org.openmrs.module.datamigration.util;
 
-import org.openmrs.Encounter;
-import org.openmrs.Location;
-import org.openmrs.Obs;
-import org.openmrs.Patient;
+import org.openmrs.*;
 import org.openmrs.api.context.Context;
 
 import java.text.SimpleDateFormat;
@@ -19,28 +16,31 @@ public abstract class ObsChildrenUtil {
 		try {
 			Obs obs = new Obs();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-			String obsValueType = _o.getValueTypeId();
+			Concept concept = Context.getConceptService().getConcept(_o.getConceptId());
 			String obsValue = isNullOrEmpty(_o.getValue()) ? _o.getValue() : null;
 			
-			switch (obsValueType) {
-				case "value_numeric":
+			switch (concept.getDatatype().getId()) {
+				case 1: //Numeric
 					obs.setValueNumeric(Double.parseDouble(obsValue));
 					break;
-				case "value_coded":
+				case 2: //Coded
 					obs.setValueCoded(Context.getConceptService().getConcept(obsValue));
 					break;
-				case "value_datetime":
+				case 3: //Text
 					Date dateVlue = dateFormat.parse(obsValue);
 					obs.setValueDatetime(dateVlue);
 					break;
-				case "value_text":
+				case 4: //N/A
+					obs.setValueText(obsValue);
+					break;
+				case 8: //Datetime
 					obs.setValueText(obsValue);
 					break;
 				default:
 					obs.setValueText("");
 					break;
 			}
-			obs.setConcept(Context.getConceptService().getConcept(_o.getConceptId()));
+			obs.setConcept(concept);
 			obs.setComment("");
 			obs.setEncounter(encounter);
 			obs.setObsDatetime(encounter.getEncounterDatetime());
