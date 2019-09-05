@@ -1,9 +1,6 @@
 package org.openmrs.module.datamigration.util;
 
-import org.openmrs.Encounter;
-import org.openmrs.Location;
-import org.openmrs.Obs;
-import org.openmrs.Patient;
+import org.openmrs.*;
 import org.openmrs.api.context.Context;
 
 import java.text.SimpleDateFormat;
@@ -18,29 +15,39 @@ public abstract class ObsUtil {
 		try {
 			Obs obs = new Obs();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-			String obsValueType = _o.getValueTypeId();
+			Concept concept = Context.getConceptService().getConcept(_o.getConceptId());
 			String obsValue = isNullOrEmpty(_o.getValue()) ? _o.getValue() : null;
+			Date dateVlue;
 			
-			switch (obsValueType) {
-				case "value_numeric":
-					
+			switch (concept.getDatatype().getConceptDatatypeId()) {
+				case 1: //Numeric
 					obs.setValueNumeric(Double.parseDouble(obsValue));
 					break;
-				case "value_coded":
+				case 2: //Coded
 					obs.setValueCoded(Context.getConceptService().getConcept(obsValue));
 					break;
-				case "value_datetime":
-					Date dateVlue = dateFormat.parse(obsValue);
-					obs.setValueDatetime(dateVlue);
-					break;
-				case "value_text":
+				case 3: //Text
 					obs.setValueText(obsValue);
 					break;
+				case 4: //N/A
+					obs.setValueCoded(Context.getConceptService().getConcept(obsValue));
+					break;
+				case 6: //Date
+					dateVlue = dateFormat.parse(obsValue);
+					obs.setValueDatetime(dateVlue);
+					break;
+				case 8: //Datetime
+					dateVlue = dateFormat.parse(obsValue);
+					obs.setValueDatetime(dateVlue);
+					break;
+				case 10://boolean
+					boolean booleanValue = Boolean.parseBoolean(obsValue);
+					obs.setValueBoolean(booleanValue);
 				default:
 					obs.setValueText("");
 					break;
 			}
-			obs.setConcept(Context.getConceptService().getConcept(_o.getConceptId()));
+			obs.setConcept(concept);
 			obs.setComment("");
 			obs.setEncounter(encounter);
 			obs.setObsDatetime(encounter.getEncounterDatetime());

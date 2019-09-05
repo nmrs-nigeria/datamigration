@@ -63,12 +63,12 @@ public abstract class PatientUtil {
 			addresses.add(address);
 			patient.setAddresses(addresses);
 
-			Set<PersonAttribute> attributes = new TreeSet<>();
+			/*Set<PersonAttribute> attributes = new TreeSet<>();
 			PersonAttribute attribute = new PersonAttribute();
 			attribute.setAttributeType(Context.getPersonService().getPersonAttributeType(8));
 			attribute.setValue(delegate.getPhone());
 			attributes.add(attribute);
-			patient.setAttributes(attributes);
+			patient.setAttributes(attributes);*/
 			
 			//check if the patient exists
 			String finalPepfarId = pepfarId;
