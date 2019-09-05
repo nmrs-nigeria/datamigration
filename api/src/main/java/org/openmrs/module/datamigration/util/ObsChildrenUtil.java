@@ -17,7 +17,7 @@ public abstract class ObsChildrenUtil {
 			Obs obs = new Obs();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			Concept concept = Context.getConceptService().getConcept(_o.getConceptId());
-			String obsValue = isNullOrEmpty(_o.getValue()) ? _o.getValue() : null;
+			String obsValue = isNullOrEmpty(_o.getValue()) ? _o.getValue() : " ";
 			Date dateVlue;
 			
 			switch (concept.getDatatype().getId()) {
