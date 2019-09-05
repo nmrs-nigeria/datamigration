@@ -47,7 +47,6 @@ public abstract class PatientUtil {
 			//patient.setCauseOfDeath(delegate.getCauseOfDeath());
 			patient.setDateCreated(delegate.getDateCreated());
 
-
 			Set<PersonAddress> addresses = new TreeSet<>();
 			PersonAddress address = new PersonAddress();
 
@@ -63,6 +62,13 @@ public abstract class PatientUtil {
 
 			addresses.add(address);
 			patient.setAddresses(addresses);
+
+			Set<PersonAttribute> attributes = new TreeSet<>();
+			PersonAttribute attribute = new PersonAttribute();
+			attribute.setAttributeType(Context.getPersonService().getPersonAttributeType(8));
+			attribute.setValue(delegate.getPhone());
+			attributes.add(attribute);
+			patient.setAttributes(attributes);
 			
 			//check if the patient exists
 			String finalPepfarId = pepfarId;

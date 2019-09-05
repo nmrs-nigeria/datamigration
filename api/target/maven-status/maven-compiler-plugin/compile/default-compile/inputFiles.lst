@@ -13,6 +13,7 @@
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Facility.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Model/Migration.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/api/dao/DbConnection.java
+/home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/Operations.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/PatientUtil.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/DataMigrationConfig.java
 /home/test/IdeaProjects/datamigration/api/src/main/java/org/openmrs/module/datamigration/util/ObsChildrenUtil.java

@@ -56,6 +56,7 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 			description.addProperty("birthdateEstimated");
 			description.addProperty("dead");
 			description.addProperty("deathDate");
+			description.addProperty("dateCreated");
 			description.addProperty("causeOfDeath");
 			description.addProperty("phone");
 			description.addProperty("facility", Representation.REF);
@@ -96,10 +97,10 @@ public class MigrationResource extends MetadataDelegatingCrudResource<Migration>
 		}
 		catch (Exception ex) {
 			try {
-				throw ex.getCause();
+				throw ex;
 			}
-			catch (Throwable throwable) {
-				throwable.printStackTrace();
+			catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		return delegate;

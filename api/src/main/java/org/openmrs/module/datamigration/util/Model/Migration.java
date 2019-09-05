@@ -18,7 +18,7 @@ public class Migration extends BaseOpenmrsMetadata {
 	
 	private String creator;
 	
-	private String dateCreated;
+	private Date dateCreated;
 	
 	private String birthDate;
 	
@@ -43,6 +43,7 @@ public class Migration extends BaseOpenmrsMetadata {
 	private String phone;
 
 	Set<Identifier> identifiers = new LinkedHashSet<>();
+
 
 	public String getPhone() {
 		return phone;
