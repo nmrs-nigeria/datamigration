@@ -10,8 +10,13 @@
 package org.openmrs.module.datamigration.fragment.controller;
 
 import org.openmrs.api.UserService;
+import org.openmrs.module.datamigration.util.FactoryUtils;
+import org.openmrs.module.datamigration.util.Model.SummaryDashboard;
 import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.fragment.FragmentModel;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *  * Controller for a fragment that shows all users  
@@ -20,20 +25,22 @@ public class UsersFragmentController {
 	
 	public void controller(FragmentModel model, @SpringBean("userService") UserService service) {
 		
-		/*DbConnection connection = new DbConnection();
-		
 		FactoryUtils factoryUtils = new FactoryUtils();
 		
-		Properties props = new Properties();
-		props = OpenmrsUtil.getRuntimeProperties("openmrs");
-		if (props == null) {
-			props = OpenmrsUtil.getRuntimeProperties("openmrs-standalone");
-			
-		}
+		SummaryDashboard dashboard = new SummaryDashboard();
 		
-		factoryUtils.PatientUtils(connection.Connection(props));
-		*/
-		model.addAttribute("users", service.getAllUsers());
+		dashboard.setTotalPatientsInFac(factoryUtils.getPatients().size());
+		dashboard.setTotalPharmacyEncounter(factoryUtils.getEncounterByEncounterTypeId(12).size());
+		dashboard.setTotalCareCardEncounter(factoryUtils.getEncounterByEncounterTypeId(11).size());
+		dashboard.setTottalLaboratoryEncounter(factoryUtils.getEncounterByEncounterTypeId(13).size());
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("totalPatients", dashboard.getTotalPatientsInFac());
+		map.put("totalPharmacyEncounter", dashboard.getTotalPharmacyEncounter());
+		map.put("totallLaboratoryEncounter", dashboard.getTotalCareCardEncounter());
+		map.put("totalCareCardEncounter", dashboard.getTotalCareCardEncounter());
+		model.mergeAttributes(map);
+		
 	}
 	
 }

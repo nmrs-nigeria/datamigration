@@ -1,9 +1,14 @@
 package org.openmrs.module.datamigration.util;
 
 import org.openmrs.*;
+import org.openmrs.api.context.Context;
 import org.openmrs.module.datamigration.util.Model.Migration;
 
 import java.text.ParseException;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class FactoryUtils {
 	
@@ -23,6 +28,14 @@ public class FactoryUtils {
 		catch (Exception e) {
 			throw e;
 		}
-		
+	}
+	
+	public static List<EncounterType> getEncounterByEncounterTypeId(int HIV_Enrollment_Encounter_Type_Id) {
+       return Context.getEncounterService().getAllEncounterTypes()
+               .stream().filter(x->x.getEncounterTypeId() ==HIV_Enrollment_Encounter_Type_Id ).collect(Collectors.toList());
+    }
+	
+	public static List<Patient> getPatients() {
+		return Context.getPatientService().getAllPatients();
 	}
 }
