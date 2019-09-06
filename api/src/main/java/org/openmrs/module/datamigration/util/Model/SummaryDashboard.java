@@ -4,11 +4,11 @@ public class SummaryDashboard {
 	
 	Integer totalPatientsInFac;
 	
-	Integer totalPharmacyEncounter;
+	Integer countOfEncounter;
 	
-	Integer tottalLaboratoryEncounter;
+	Integer encounterTypeID;
 	
-	Integer totalCareCardEncounter;
+	String encounterName;
 	
 	public Integer getTotalPatientsInFac() {
 		return totalPatientsInFac;
@@ -18,27 +18,27 @@ public class SummaryDashboard {
 		this.totalPatientsInFac = totalPatientsInFac;
 	}
 	
-	public Integer getTotalPharmacyEncounter() {
-		return totalPharmacyEncounter;
+	public Integer getCountOfEncounter() {
+		return countOfEncounter;
 	}
 	
-	public void setTotalPharmacyEncounter(Integer totalPharmacyEncounter) {
-		this.totalPharmacyEncounter = totalPharmacyEncounter;
+	public void setCountOfEncounter(Integer countOfEncounter) {
+		this.countOfEncounter = countOfEncounter;
 	}
 	
-	public Integer getTottalLaboratoryEncounter() {
-		return tottalLaboratoryEncounter;
+	public Integer getEncounterTypeID() {
+		return encounterTypeID;
 	}
 	
-	public void setTottalLaboratoryEncounter(Integer tottalLaboratoryEncounter) {
-		this.tottalLaboratoryEncounter = tottalLaboratoryEncounter;
+	public void setEncounterTypeID(Integer encounterTypeID) {
+		this.encounterTypeID = encounterTypeID;
 	}
 	
-	public Integer getTotalCareCardEncounter() {
-		return totalCareCardEncounter;
+	public String getEncounterName() {
+		return encounterName;
 	}
 	
-	public void setTotalCareCardEncounter(Integer totalCareCardEncounter) {
-		this.totalCareCardEncounter = totalCareCardEncounter;
+	public void setEncounterName(String encounterName) {
+		this.encounterName = encounterName;
 	}
 }
