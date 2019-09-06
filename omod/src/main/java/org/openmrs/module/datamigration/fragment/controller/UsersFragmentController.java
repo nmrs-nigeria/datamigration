@@ -22,26 +22,25 @@ import java.util.Map;
  *  * Controller for a fragment that shows all users  
  */
 public class UsersFragmentController {
-
+	
 	public void controller(FragmentModel model, @SpringBean("userService") UserService service) {
-
+		
 		FactoryUtils factoryUtils = new FactoryUtils();
-
+		
 		SummaryDashboard dashboard = new SummaryDashboard();
-
+		
 		dashboard.setTotalPatientsInFac(factoryUtils.getPatients().size());
 		dashboard.setTotalPharmacyEncounter(factoryUtils.getEncounterByEncounterTypeId(12).size());
 		dashboard.setTotalCareCardEncounter(factoryUtils.getEncounterByEncounterTypeId(11).size());
 		dashboard.setTottalLaboratoryEncounter(factoryUtils.getEncounterByEncounterTypeId(13).size());
-
-
+		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("totalPatients", dashboard.getTotalPatientsInFac());
 		map.put("totalPharmacyEncounter", dashboard.getTotalPharmacyEncounter());
 		map.put("totallLaboratoryEncounter", dashboard.getTotalCareCardEncounter());
 		map.put("totalCareCardEncounter", dashboard.getTotalCareCardEncounter());
 		model.mergeAttributes(map);
-
+		
 	}
 	
 }
