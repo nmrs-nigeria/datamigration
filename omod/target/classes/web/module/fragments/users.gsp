@@ -13,7 +13,6 @@
         <br>
 
         Total Pateints
-        <p><b>${ ui.format(totalPatients) }</b></p>
     </a>
 
     <a id="coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension" href="/openmrs/coreapps/findpatient/findPatient.page?app=coreapps.findPatient" class="button app big">

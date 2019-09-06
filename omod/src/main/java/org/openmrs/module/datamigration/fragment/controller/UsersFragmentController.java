@@ -10,12 +10,16 @@
 package org.openmrs.module.datamigration.fragment.controller;
 
 import org.openmrs.api.UserService;
+import org.openmrs.api.context.Context;
+import org.openmrs.module.datamigration.api.dao.DbConnection;
 import org.openmrs.module.datamigration.util.FactoryUtils;
 import org.openmrs.module.datamigration.util.Model.SummaryDashboard;
 import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.fragment.FragmentModel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,23 +28,17 @@ import java.util.Map;
 public class UsersFragmentController {
 	
 	public void controller(FragmentModel model, @SpringBean("userService") UserService service) {
-		
+		DbConnection connection = new DbConnection();
 		FactoryUtils factoryUtils = new FactoryUtils();
-		
-		SummaryDashboard dashboard = new SummaryDashboard();
-		
-		dashboard.setTotalPatientsInFac(factoryUtils.getPatients().size());
-		dashboard.setTotalPharmacyEncounter(factoryUtils.getEncounterByEncounterTypeId(12).size());
-		dashboard.setTotalCareCardEncounter(factoryUtils.getEncounterByEncounterTypeId(11).size());
-		dashboard.setTottalLaboratoryEncounter(factoryUtils.getEncounterByEncounterTypeId(13).size());
-		
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("totalPatients", dashboard.getTotalPatientsInFac());
-		map.put("totalPharmacyEncounter", dashboard.getTotalPharmacyEncounter());
-		map.put("totallLaboratoryEncounter", dashboard.getTotalCareCardEncounter());
-		map.put("totalCareCardEncounter", dashboard.getTotalCareCardEncounter());
+		List<SummaryDashboard> summaryDashboardList = factoryUtils.getEncounters(connection.staticConnection());
+
+
+		map.put("totalPatients",Context.getPatientService().getAllPatients().size());
+        map.put("totallLaboratoryEncounter",  summaryDashboardList.stream().filter(x->x.getEncounterTypeID().equals(11)).findFirst().orElse(null).getEncounterTypeID());
+        map.put("totalPharmacyEncounter",  summaryDashboardList.stream().filter(x->x.getEncounterTypeID().equals(13)).findFirst().orElse(null).getEncounterTypeID());
+		map.put("totalCareCardEncounter",  summaryDashboardList.stream().filter(x->x.getEncounterTypeID().equals(12)).findFirst().orElse(null).getEncounterTypeID());
 		model.mergeAttributes(map);
 		
 	}
-	
 }

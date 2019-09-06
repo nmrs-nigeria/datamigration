@@ -23,4 +23,18 @@ public class DbConnection {
 			return null;
 		}
 	}
+	
+	public Connection staticConnection() {
+		Connection connection;
+		
+		try {
+			connection = (Connection) DriverManager.getConnection(
+			    "jdbc:mysql://127.0.0.1:3306/openmrs?zeroDateTimeBehavior=convertToNull", "root", "Nu66et");
+			return connection;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
