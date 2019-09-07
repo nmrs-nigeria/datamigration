@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75bcb9b2-bcf6-461d-b04a-cd1495840e56" name="Default Changelist" comment="validation Summary Added">
-      <change afterPath="$PROJECT_DIR$/migration_summary.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/AddressResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/AnyThingResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/EncounterResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/IdentifierResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/IdentifiersResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/NigeriaEmrRestController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ObsResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/extension/html/AdminList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/web/controller/DataMigrationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT.omod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/AddressResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/AnyThingResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/EncounterResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/FacilityResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/IdentifierResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/IdentifiersResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/MigrationResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/NigeriaEmrRestController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ObsResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/extension/html/AdminList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/web/controller/DataMigrationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/web/module/fragments/users.gsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/api/dao/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/api/dao/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/SummaryDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/Model/SummaryDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/api/dao/DbConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/FactoryUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/SummaryDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/datamigration/util/Model/SummaryDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/datamigration-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/datamigration-omod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/omod/datamigration-omod.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/omod/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/datamigration/fragment/controller/UsersFragmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/src/main/webapp/pages/datamigration.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/webapp/pages/datamigration.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ObsChildrenResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ObsChildrenResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ProviderResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/datamigration/ProviderResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/web/module/fragments/users.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/web/module/fragments/users.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/classes/web/module/pages/datamigration.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/web/module/pages/datamigration.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ObsChildrenResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ObsChildrenResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ProviderResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/datamigration-1.0.0-SNAPSHOT/org/openmrs/module/datamigration/ProviderResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" afterDir="false" />
-    </list>
+    <list default="true" id="75bcb9b2-bcf6-461d-b04a-cd1495840e56" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/omod/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state relative-caret-position="172">
+              <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -845,7 +792,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567765460423</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="validation Summary Changes for connection string">
+      <created>1567795422668</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1567795422668</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -894,6 +848,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="678" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49712643" visible="true" weight="0.19848485" />
       <window_info id="Structure" order="1" sideWeight="0.50287354" side_tool="true" weight="0.19848485" />
@@ -967,7 +922,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge branch 'master' of https://github.com/nmrs-nigeria/datamigration&#10;&#10;# Conflicts:&#10;#&#9;api/target/datamigration-api-1.0.0-SNAPSHOT.jar&#10;#&#9;api/target/maven-archiver/pom.properties&#10;#&#9;api/target/maven-java-formatter-cache.properties&#10;#&#9;api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst&#10;#&#9;omod/target/datamigration-1.0.0-SNAPSHOT.jar&#10;#&#9;omod/target/datamigration-1.0.0-SNAPSHOT.omod&#10;#&#9;omod/target/datamigration-1.0.0-SNAPSHOT/lib/datamigration-api-1.0.0-SNAPSHOT.jar&#10;#&#9;omod/target/maven-archiver/pom.properties&#10;#&#9;omod/target/maven-java-formatter-cache.properties&#10;#&#9;omod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;omod/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     <MESSAGE value="More changes" />
     <MESSAGE value="More changes for cleanup" />
     <MESSAGE value="More changes for facility Resources" />
@@ -992,7 +946,8 @@
     <MESSAGE value="Commits" />
     <MESSAGE value="Final touch on migration for test" />
     <MESSAGE value="validation Summary Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation Summary Added" />
+    <MESSAGE value="validation Summary Changes for connection string" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation Summary Changes for connection string" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1708,8 +1663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/datamigration/util/FactoryUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="172">
+          <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
